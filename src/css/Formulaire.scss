@@ -1,0 +1,95 @@
+@font-face {
+    font-family:"Poppins-Light" ;
+    src: url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+    font-family:"poopo" ;
+    src: url("../fonts/Poppins-ExtraLight.ttf");
+}
+
+:root{
+    --root:rgba(21, 173, 224, 0.885);
+    --body:#e0dfdf18;
+}
+.slide-down {
+    transform: translateY(10px); /* Fait descendre l'élément de 100px */
+}
+.content-request{
+    transition: .8s;
+}
+.othercard{
+    strong{
+        color: var(--root);
+    }
+    background-color: rgb(248 248 248 / 9%) ;
+    font-family: "poopo";
+    width: 800px;
+    padding: 5px;
+    .col-3{
+        font-size: 13px;
+    }
+    margin-bottom: 20px;
+}
+.formulaire_conger{
+    font-family: "poopo";
+    background: rgb(255 255 255 / 0%);
+    width: 400px;
+    box-shadow: 0px 0px 1px 0px rgb(89 88 88 / 14%);
+    padding: 10px;
+    span{
+        font-weight: 13px;
+        font-weight: bold;
+    }
+    form{
+        .selecttype{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        select{
+            margin-left: 8px;
+            width: 370px;
+            background: var(--body);
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        label{
+            font-size: 10px;
+            color: black;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .row{
+            margin-top: 8px;
+        }
+        padding: 5px;
+        .date{
+            margin-left: auto;
+            margin-right: auto;
+            input{
+                outline: none;
+                background: none;
+                border: none;
+                background: var(--body);
+                padding: 10px;
+                width: 370px;
+            }
+        }
+        textarea{
+            background: none;
+            width: 370px;
+            outline:rgb(9, 115, 255);
+            margin-left: 8px;
+        }
+        input[type="submit"]{
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+            width: 370px;
+            padding: 10px;
+            margin-top: 10px;
+            color: white;
+            background:var(--root) ;
+        }
+    }
+}

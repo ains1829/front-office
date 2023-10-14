@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "poopo";
+  src: url("../fonts/Poppins-ExtraLight.ttf");
+}
+:root {
+  --root:rgba(21, 173, 224, 0.885);
+  --body:#e0dfdf18;
+}
+
+body {
+  background: rgba(255, 255, 255, 0.108) !important;
+  margin: 0;
+  padding: 0;
+}
+body .navbar {
+  background: none;
+  border: none;
+}
+body .navbar .navbar-brand {
+  font-family: "poopo";
+  color: var(--root);
+  font-weight: bold;
+}
+body .navbar .navbar-brand:hover {
+  color: var(--root);
+  font-weight: bold;
+}
+body .navbar form input[type=text] {
+  font-family: "poopo";
+  border: none;
+  outline: none;
+  background-color: rgba(245, 245, 245, 0.0941176471);
+  box-shadow: 0px 0px 1px 0px rgba(129, 114, 207, 0.3);
+  padding: 5px;
+  width: 350px;
+  border-radius: 30px;
+}
+body .navbar form label {
+  margin-left: 2px;
+  border-radius: 40px;
+  padding: 5px;
+  width: 40px;
+  text-align: center;
+  background: var(--root);
+  color: white;
+}
+body .navbar form label i {
+  font-size: 16px;
+  border-radius: 30px;
+}
+body .navbar form input[type=submit] {
+  display: none;
+}
+body .navbar .users {
+  color: white;
+  border-radius: 5px;
+  font-family: "poopo";
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  background: var(--root);
+}
+body .navbar .users i {
+  transform: translateX(-10px);
+}
+body .box .menu {
+  font-family: "poopo";
+}
+body .box .menu ul {
+  color: white;
+  list-style: none;
+}
+body .box .menu ul li a {
+  text-decoration: none;
+  color: var(--root);
+  font-weight: bold;
+}
+body .box .menu div {
+  width: 200px;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 8px;
+}/*# sourceMappingURL=style.css.map */

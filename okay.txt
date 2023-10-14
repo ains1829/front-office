@@ -1,0 +1,32 @@
+listes personnel :
+	est actif
+	matricule 
+	mijery oe mbola afaka miasa v 
+	date de naissance :
+	capacite d'exercice
+	date d'embauche (ancienneter) -
+	genre feminin masculin
+	direction misy azy 
+	fonction (developppeur)
+
+fiche de paye :
+numero martcile
+classification 
+salaire de base salaire de brute
+salaire
+
+gestion conger 
+
+1-valider superireur herarchique 
+2-valider ressource humaine
+
+
+objectif :
+	blacapp : backend
+	firebase : authentification , notifications
+	Netlify : frontend
+
+firebase :
+	Message et notifications 
+	notification : local (appli)
+	notification : en ligne

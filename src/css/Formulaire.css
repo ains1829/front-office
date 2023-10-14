@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "poopo";
+  src: url("../fonts/Poppins-ExtraLight.ttf");
+}
+:root {
+  --root:rgba(21, 173, 224, 0.885);
+  --body:#e0dfdf18;
+}
+
+.slide-down {
+  transform: translateY(10px); /* Fait descendre l'élément de 100px */
+}
+
+.content-request {
+  transition: 0.8s;
+}
+
+.othercard {
+  background-color: rgba(248, 248, 248, 0.09);
+  font-family: "poopo";
+  width: 800px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.othercard strong {
+  color: var(--root);
+}
+.othercard .col-3 {
+  font-size: 13px;
+}
+
+.formulaire_conger {
+  font-family: "poopo";
+  background: rgba(255, 255, 255, 0);
+  width: 400px;
+  box-shadow: 0px 0px 1px 0px rgba(89, 88, 88, 0.14);
+  padding: 10px;
+}
+.formulaire_conger span {
+  font-weight: 13px;
+  font-weight: bold;
+}
+.formulaire_conger form {
+  padding: 5px;
+}
+.formulaire_conger form .selecttype {
+  margin-left: auto;
+  margin-right: auto;
+}
+.formulaire_conger form select {
+  margin-left: 8px;
+  width: 370px;
+  background: var(--body);
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+.formulaire_conger form label {
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.formulaire_conger form .row {
+  margin-top: 8px;
+}
+.formulaire_conger form .date {
+  margin-left: auto;
+  margin-right: auto;
+}
+.formulaire_conger form .date input {
+  outline: none;
+  background: none;
+  border: none;
+  background: var(--body);
+  padding: 10px;
+  width: 370px;
+}
+.formulaire_conger form textarea {
+  background: none;
+  width: 370px;
+  outline: rgb(9, 115, 255);
+  margin-left: 8px;
+}
+.formulaire_conger form input[type=submit] {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  width: 370px;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  background: var(--root);
+}/*# sourceMappingURL=Formulaire.css.map */

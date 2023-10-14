@@ -1,0 +1,45 @@
+@font-face {
+    font-family:"Poppins-Light" ;
+    src: url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+    font-family:"poopo" ;
+    src: url("../fonts/Poppins-ExtraLight.ttf");
+}
+:root{
+    --root:rgba(21, 173, 224, 0.885);
+    --body:#e0dfdf18;
+}
+.all_annonce{
+    transition: .8s;
+    .card{
+        img{
+            transform: translate(10px , 10px);
+        }
+        transition: 0.5s;
+        animation: animate_view;
+        font-family: "Poppins-Light" !important;
+        border: none;
+        background: rgb(255 255 255 / 4%);
+        box-shadow: 0px 0px 0px 1px rgb(73 72 72 / 1%);
+        border-radius: 0px;
+        .card-body{
+            h5{
+                color: var(--root);
+            }
+            .card-text{
+                font-size: 14px;
+            }
+            .liens{
+                .col-2{
+                    a{
+                        // width: ;
+                        color: var(--root);
+                        text-decoration: none;
+                        // background: var(--root);
+                    }
+                }
+            }
+        }
+    }
+}

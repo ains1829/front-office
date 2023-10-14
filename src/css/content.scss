@@ -1,0 +1,272 @@
+
+.slide-down {
+    opacity: 1;
+    transform: translateY(10px); /* Fait descendre l'élément de 100px */
+  }
+.content{
+    // opacity: .5;
+    // transform: translateY(-10px);
+    transition: .8s;
+    // animation: animate;
+    .col-md-1{
+        // background: blue;
+    }
+    .menu{
+        padding: 5px;
+    }
+    .col-md-11{
+
+    }
+    h6{
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 12px;
+        font-family: "Poppins-Light" !important;
+        margin-top: 20px;
+        color: rgb(17, 16, 16);
+    }
+    .annonce{
+        .input-submit{
+            input{
+                font-family: "Poppins-Light" !important;
+                background: var(--root);
+                border:none;
+                color: white;
+                padding: 8px;
+                border-radius: 5px;
+            }
+        }
+        .calendar{
+            .title-label{
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            .form-check{
+                label{
+                    font-size: 14px;
+                }
+            }
+        }
+        margin-bottom: 20px;
+        background: var(--body);
+        border-radius: 8px;
+        padding: 20px;
+        font-family: "Poppins-Light" !important;
+        .heure-jour{
+            padding: 8px;
+            // display: flex;
+            // align-items: center;
+            input{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 250px;
+            }
+            select{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                transform: translate(-10px , 10px);
+                width: 200px;
+            }
+            .label-input{
+                label{
+                    font-weight: 100;
+                    font-family: "Poppins-Light" !important;
+                    font-size: 13px;
+        
+                }
+            }
+        }
+        .homme-jour{
+            padding: 8px;
+            margin-top: 10px;
+            font-family: "Poppins-Light" !important;
+            input{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 250px;
+            }
+            label{
+                font-weight: 100;
+                font-family: "Poppins-Light" !important;
+                font-size: 13px;
+            }
+        }
+        .select-service{
+            padding: 8px;
+            margin-top: 8px;
+            label{
+                font-weight: 100;
+                font-family: "Poppins-Light" !important;
+                font-size: 13px;
+            }
+            select{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 245px;
+            }
+        }
+        .age{
+            padding: 8px;
+            // margin-top: 8px;
+            label{
+                font-weight: 100;
+                font-family: "Poppins-Light" !important;
+                font-size: 13px;
+            }
+            .min{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 250px;
+            }
+            .max{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 200px;
+            }
+        }
+        .input-button{
+            input[type="submit"]{
+                border: none;
+                padding: 8px;
+                color: white;
+                background-color: var(--root);
+                border-radius: 4px;
+                width: 100px;
+            }
+        }
+        .critere{
+            margin-top: 5px;
+            padding: 8px;
+        }
+        .sous-critere{
+            label{
+                font-weight: 100;
+                font-family: "Poppins-Light" !important;
+                font-size: 13px;
+            }
+            input{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 200px;
+            }
+            select{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 245px;
+            }
+        }
+        .sous-2{
+            margin-top: 10px;
+        }
+        .sous-thr{
+            align-items: center;
+        }
+        .sous-3{
+            margin-top: 2px;
+            align-items: center;
+            input[type="text"]{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 200px;
+            }
+        }
+        .sous-critere-2{
+            label{
+                font-weight: 100;
+                font-family: "Poppins-Light" !important;
+                font-size: 13px;
+            }
+            input{
+                font-family: "Poppins-Light" !important;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 250px;
+            }
+        
+        }
+    }
+}
+.ajout_service{
+    border-radius: 8px;
+    height: 200px;
+    .ajout{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .add{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    margin-left: 20px;
+    background: var(--body);
+    .add{
+        font-family: "Poppins-Light" !important;
+        form{
+            label{
+                font-weight: 100;
+                font-size: 13px;
+            }
+            input[type="text"]{
+                margin-top: 5px;
+                margin-left: 8px;
+                padding: 8px;
+                border: none;
+                outline: none;
+                background-color: none;
+                background: rgb(255, 255, 255);
+                width: 200px;
+            }
+        }
+        .submit{
+            input[type="submit"]{
+                width: 100px;
+                padding: 8px;
+                background: none;
+                border: none;
+                background: var(--root);
+                margin-top: 20px;
+                color: white;
+                border-radius: 4px;
+            }
+        }
+    }
+}

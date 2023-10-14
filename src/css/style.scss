@@ -1,0 +1,96 @@
+@font-face {
+    font-family:"Poppins-Light" ;
+    src: url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+    font-family:"poopo" ;
+    src: url("../fonts/Poppins-ExtraLight.ttf");
+}
+:root{
+    --root:rgba(21, 173, 224, 0.885);
+    --body:#e0dfdf18;
+}
+body{
+    background: rgba(255, 255, 255, 0.108) !important;
+    margin: 0;
+    padding: 0;
+    .navbar{
+        // background-color: var(--body);
+        background: none;
+        border: none;
+        .navbar-brand{
+            font-family: "poopo";
+            color: var(--root);
+            font-weight: bold;
+        }
+        .navbar-brand:hover{
+            color: var(--root);
+            font-weight: bold;
+        }
+        form{
+            input[type="text"]{
+                font-family: "poopo";
+                border: none;
+                outline: none;
+                background-color: rgba(245, 245, 245, 0.0941176471);
+                box-shadow: 0px 0px 1px 0px rgb(129 114 207 / 30%);
+                padding: 5px;
+                width: 350px;
+                border-radius: 30px;
+            }
+            label{
+                i{
+                    font-size: 16px;
+                    border-radius: 30px;
+                }
+                margin-left: 2px;
+                border-radius:40px;
+                padding: 5px;
+                width: 40px;
+                text-align: center;
+                background: var(--root);
+                color: white;
+            }
+            input[type="submit"]{
+                display: none;
+            }
+        }
+        .users{
+            i{
+                transform: translateX(-10px);
+            }
+            color: white;
+            border-radius: 5px;
+            font-family: "poopo";
+            width: 100px;
+            text-align: center;
+            padding: 5px;
+            background: var(--root);
+        }
+    }
+    .box{
+        .menu{
+            ul{
+                color: white;
+                list-style: none;
+                li{
+                    // color: rgb(10, 7, 191) !important;
+                    a{
+                        text-decoration: none;
+                        color: var(--root);
+                        font-weight: bold;
+                    }
+                }
+            }
+            font-family: "poopo";
+            div{
+                // background: var(--root);
+                width: 200px;
+                margin-top: 20px;
+                border-radius: 10px;
+                padding: 8px;
+                // text-align: center;
+            }
+        }
+    }
+}
