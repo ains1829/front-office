@@ -13,7 +13,7 @@ function App(token) {
               <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                      <a className="navbar-brand" href="#">Ressource Humaine</a>
+                      <span className="navbar-brand" href="#">R-H</span>
                     </div>
                     <div className='col-offset-2'>
                       <form>
