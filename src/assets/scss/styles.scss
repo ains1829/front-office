@@ -1,0 +1,197 @@
+:root{
+    --var_green : #BAFF29;
+    --var_marine : #1A1B41;
+    --var_light : #F1FFE7;
+    --var_blue_sky : #C2E7DA;
+    --var_blue : #6290C3; 
+    --white : white ;
+}
+@font-face {
+    font-family: poppins_medium;
+    src: url("../fonts/Poppins-Medium.ttf");
+}
+@font-face {
+    font-family: poppins_ligth;
+    src: url("../fonts/Poppins-Light.ttf");
+}
+body{
+    min-height: 100vh ;
+    display: flex;
+    flex-direction: column;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--var_marine);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track{
+    background: var(--white);
+    border-radius: 8px;
+}
+.content-data{
+    .scrolled{
+        background: var(--white);
+    }
+    header{
+        font-family: poppins_medium;
+        transition: .5s;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        justify-content: space-between;
+        background: #1a1b4100;
+        z-index: 99;
+        width: 100%;
+        .logo{
+            width: 200px;
+            height: 50px;
+            img{
+                width: 100%;
+                background-size: contain;
+                height: 50px;
+            }
+        }
+        .nav-bar{
+            span{
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 80px;
+                font-family: poppins_ligth !important;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+        .connect{
+            transform: translateX(-5px);
+            width: 150px;
+            background: var(--var_marine);
+            text-align: center;
+            border-radius: 30px;
+            padding: 5px;
+            .seconnecter{
+                font-size: 13px;
+                color: var(--var_light);
+                font-family: poppins_medium;
+            }
+        }
+        margin-bottom: 50px;
+    }
+    .affiche{
+        background-image: url('../image/femme-appreciant-son-independance-financiere-tout-achetant-voiture.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: inherit;
+        width: 100%;
+        height: 650px;
+        .pub{
+            z-index: 99;
+            font-family: poppins_medium;
+            transform: translateY(150px);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            span{
+                color: var(--var_light);
+                width: 850px;
+                font-size: 60px;
+                letter-spacing: 5px;
+                text-shadow: rgba(0,0,0,0.3);
+            }
+            a{
+                display: flex;
+                background: var(--var_marine);
+                font-family: poppins_medium;
+                width: 200px;
+                justify-content: center;
+                text-decoration: none;
+                color: var(--var_light);
+                border-radius: 30px;
+                font-size: 14px;
+                padding: 10px;
+                box-shadow: 0px 0px 12px 6px rgb(0 34 62 / 60%);
+            }
+        }
+    }
+    .add{
+        width: 200px ;
+        margin: 0 auto ;
+        padding: 8px;
+        background: var(--var_marine) ;
+        border-radius: 30px;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px ;
+        cursor: pointer;
+        span{
+            font-family: poppins_ligth;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        i{
+            transform: translateX(-5px);
+            font-size: 12px;
+        }
+    }
+    footer{
+        width: 100% ;
+        display: flex ;
+        justify-content: space-around;
+        background: var(--var_light);
+        font-family: poppins_ligth;
+        .logo{
+            padding: 10px;
+            img{
+                width: 200px;
+                height: 100px;
+                background-size: contain;
+            }
+            .copyright{
+                font-size: 14px;
+                width: 200px;
+                font-weight: bold;
+            }
+            .reseaux{
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-evenly;
+                i{
+                    width: 30px;
+                    height: 30px;
+                    background: var(--var_marine);
+                    color: white;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        .company , .Techno{
+            display: flex ;
+            flex-direction: column;
+            padding: 10px;
+            label{
+                font-size: 13px ;
+                font-family: poppins_medium !important;
+            }
+            span{
+                font-family: poppins_medium !important;
+                font-size: 15px;
+                margin-top: 5px;
+                color: var(--var_marine)
+            }
+        }
+    }
+}
+@import url("./Card.css");
+@import url("./Recherche.css");
+@import url("./details.css");
+@import url("./message.css");

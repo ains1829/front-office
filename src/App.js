@@ -1,38 +1,18 @@
-
-import './css/style.css';
-import './fontawesome-5/css/all.min.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import './fontawesome-5/css/all.min.css'
-import Menu from './Menu';
-import Content from './Content';
-function App(token) { 
-  console.log("token avy aty app = " + token.tokenEmail)
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Acceuils from './page/Acceuil';
+import Recherche from './page/Recherche';
+import Details from './page/Details';
+import Message from './page/Message';
+function App() { 
+  const location = useLocation()
   return (
-        <div>
-          <header>
-              <nav className="navbar navbar-default">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                      <span className="navbar-brand" href="#">R-H</span>
-                    </div>
-                    <div className='col-offset-2'>
-                      <form>
-                        <input type="text" placeholder='search...' name="search"/>
-                        <label htmlFor='submit'> <i className='fas fa-search'></i> </label>
-                        <input id='sumbit' type="submit" />
-                      </form>
-                    </div>
-                    <div className='users'>
-                      <i className='fas fa-user'></i>
-                      <span>
-                          Users
-                      </span>
-                    </div>
-                </div>
-              </nav>
-          </header>
-            <Menu token = {token.tokenEmail}/>
-        </div>
+    <Routes location={location} key={location.pathname}>
+      <Route path='/' Component={Acceuils}></Route>
+      <Route path='/acceuil' Component={Acceuils}></Route>
+      <Route path='/recherche' Component={Recherche}></Route>
+      <Route path='/details/:id' Component={Details}></Route>
+      <Route path='/message' Component={Message}></Route>
+    </Routes>
   );
 }
 export default App;

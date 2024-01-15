@@ -1,0 +1,138 @@
+.Details {
+  transform: translateY(80px);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+.Details .details {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: center;
+  width: 700px;
+  margin-left: 10px;
+}
+.Details .details .about-car {
+  font-family: poppins_ligth;
+}
+.Details .details .about-car h1 {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--var_marine);
+  font-weight: bold;
+}
+.Details .details .about-car div {
+  margin-top: 10px;
+}
+.Details .details .about-car div span {
+  font-size: 16px;
+}
+.Details .details .about-car .vendeur {
+  display: flex;
+  flex-direction: column;
+}
+.Details .details .about-car .vendeur label {
+  font-size: 13px;
+  font-weight: bold;
+}
+.Details .details .about-car .contact a {
+  text-decoration: none;
+  color: white;
+  background: var(--var_marine);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 13px;
+}
+.Details .details .photo-car {
+  width: 100%;
+}
+.Details .modele {
+  font-family: poppins_ligth;
+  margin-left: 30px;
+  width: 300px;
+  height: 210px;
+  box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 5px;
+  position: sticky;
+}
+.Details .modele .Title {
+  text-align: center;
+  font-weight: bold;
+  padding: 3px;
+}
+.Details .modele .caracteristique {
+  width: 90%;
+  margin-top: 5px;
+  font-family: poppins_ligth;
+  text-align: center;
+  font-size: 15px;
+  color: rgba(190, 190, 190, 0.661);
+}
+.Details .modele .prix {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5px;
+}
+.Details .modele .prix .price {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+.Details .modele .prix .bonne {
+  background: var(--var_green);
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: bold;
+}
+.Details .modele .prix .bonne i {
+  color: var(--white);
+}
+.Details .modele .annonce {
+  margin-top: 10px;
+  color: rgba(90, 87, 87, 0.406);
+  font-size: 14px;
+}
+.Details .modele a {
+  margin-top: 10px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  background: var(--var_marine);
+  padding: 7px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 30px;
+}
+.Details .modele a i {
+  transform: rotate(100deg);
+  margin-right: 5px;
+}
+.Details .choix-message {
+  margin-top: 40px;
+  box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 30px;
+}
+.Details .choix-message span {
+  border: 1px solid var(--var_marine);
+  padding: 2px;
+  border-radius: 30px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.Details .choix-message span:hover {
+  background: rgba(0, 195, 255, 0.066);
+}/*# sourceMappingURL=details.css.map */

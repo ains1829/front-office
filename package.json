@@ -1,5 +1,5 @@
 {
-  "name": "react_project",
+  "name": "front-office",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,10 +17,12 @@
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-big-calendar": "^1.8.4",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.5.2",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "swiper": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
