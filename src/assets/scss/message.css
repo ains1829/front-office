@@ -67,7 +67,7 @@
   flex-direction: column;
 }
 .content-message .message .data .messaging div {
-  width: 300px;
+  width: 300px !important;
 }
 .content-message .message .data .messaging div .me {
   margin-right: 5px;
@@ -78,6 +78,7 @@
   padding: 8px;
   color: white;
   display: inline-block;
+  flex-wrap: wrap;
 }
 .content-message .message .data .messaging div .annonceur {
   font-size: 14px;
@@ -89,6 +90,7 @@
   border-radius: 30px;
 }
 .content-message .message .data .messaging .me_boite {
+  width: 300px;
   margin-left: auto;
   display: flex;
   flex-direction: row-reverse;

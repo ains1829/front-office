@@ -1,3 +1,4 @@
+@import url("./login.css");
 @import url("./Card.css");
 @import url("./Recherche.css");
 @import url("./details.css");
@@ -74,6 +75,7 @@ body {
   color: black;
 }
 .content-data header .connect {
+  text-decoration: none;
   transform: translateX(-5px);
   width: 150px;
   background: var(--var_marine);

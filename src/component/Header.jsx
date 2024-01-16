@@ -46,11 +46,11 @@ function Header(){
                     </Link>
                 </span>
             </div>
-            <div className="connect">
+            <Link to="/login" className="connect">
                 <span className="seconnecter">
                     Se Connecter
                 </span>
-            </div>
+            </Link>
         </header>
     )
 }

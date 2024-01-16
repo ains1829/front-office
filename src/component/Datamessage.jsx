@@ -12,7 +12,7 @@ function Datamessage({ idpersonne }) {
     }
     if (idpersonne === 2) {
       setPersonne({ id: 2, names: "Mirado", firstnames: "Mamiarivony" });
-      setMessage([{ for_who: "1", mp: "Miradooooooo" }, { for_who: "0", mp: "popopopopo" }]);
+      setMessage([{ for_who: "1", mp: "Miradooooooo" }, { for_who: "0", mp: "popopopopo" } , {for_who : "0" , mp:"Zay lesy eh"},{ for_who: "1", mp: "Aiza no fotoana . 20M fmg zany an" } , {for_who : "0" , mp:"Ambondrona ok @8h"}]);
     }
     if (idpersonne === 3) {
       setPersonne({ id: 3, names: "Miarotiana", firstnames: "Ramanantsoa" });

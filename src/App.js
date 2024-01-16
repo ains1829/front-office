@@ -3,6 +3,7 @@ import Acceuils from './page/Acceuil';
 import Recherche from './page/Recherche';
 import Details from './page/Details';
 import Message from './page/Message';
+import Login from './page/Login';
 function App() { 
   const location = useLocation()
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path='/recherche' Component={Recherche}></Route>
       <Route path='/details/:id' Component={Details}></Route>
       <Route path='/message' Component={Message}></Route>
+      <Route path='/login' Component={Login}></Route>
     </Routes>
   );
 }
