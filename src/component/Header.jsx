@@ -31,12 +31,12 @@ function Header(){
                     </Link>
                 </span>
                 <span>
-                    <Link>
+                    <Link to="/favorie">
                         Favoris
                     </Link>
                 </span>
                 <span>
-                    <Link>
+                    <Link to="/mesannonce">
                         Mes Annonces
                     </Link>
                 </span>

@@ -35,11 +35,18 @@
   font-size: 13px;
   font-weight: bold;
 }
+.Details .details .about-car .contact {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 5px;
+}
 .Details .details .about-car .contact a {
+  display: inline-block;
+  border: 1px solid var(--var_marine);
   text-decoration: none;
-  color: white;
-  background: var(--var_marine);
-  border-radius: 5px;
+  font-weight: bold;
+  color: var(--var_marine);
+  border-radius: 30px;
   padding: 5px;
   font-size: 13px;
 }
@@ -51,12 +58,11 @@
   margin-left: 30px;
   width: 300px;
   height: 210px;
-  box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+  box-shadow: 0px 0px 12px 2px rgba(108, 113, 143, 0.05);
   display: flex;
   flex-direction: column;
   padding: 5px;
   border-radius: 5px;
-  position: sticky;
 }
 .Details .modele .Title {
   text-align: center;
@@ -74,10 +80,10 @@
 .Details .modele .prix {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 5px;
 }
 .Details .modele .prix .price {
-  border-bottom: 1px solid rgb(0, 0, 0);
   text-align: center;
   font-size: 13px;
   font-weight: bold;
@@ -86,7 +92,6 @@
   background: var(--var_green);
   font-size: 13px;
   padding: 5px;
-  border-radius: 5px;
   color: var(--white);
   font-weight: bold;
 }
@@ -96,7 +101,8 @@
 .Details .modele .annonce {
   margin-top: 10px;
   color: rgba(90, 87, 87, 0.406);
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
 }
 .Details .modele a {
   margin-top: 10px;
@@ -113,12 +119,11 @@
   border-radius: 30px;
 }
 .Details .modele a i {
-  transform: rotate(100deg);
   margin-right: 5px;
 }
 .Details .choix-message {
   margin-top: 40px;
-  box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+  box-shadow: 0px 0px 12px 2px rgba(108, 113, 143, 0.05);
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -126,7 +131,7 @@
 }
 .Details .choix-message span {
   border: 1px solid var(--var_marine);
-  padding: 2px;
+  padding: 4px;
   border-radius: 30px;
   margin-top: 5px;
   text-align: center;

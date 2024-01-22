@@ -1,8 +1,9 @@
 import Footer from "../component/Footer"
 import Header from "../component/Header"
 import '../assets/scss/styles.css'
-import user from '../assets/image/5856.png'
+import user from '../assets/image/profile-2.svg'
 import Datamessage from "../component/Datamessage"
+import '../assets/fontawesome-5/css/all.min.css'
 import { useState } from "react";
 function Message() {
     const [choix, setChoix] = useState(1);
@@ -32,22 +33,23 @@ function Message() {
                     <h1>Discussion</h1>
                     <div onClick={() => handleClick(3)}>
                         <img src={user} alt="" />
-                        <span>Miaro Ramanantsoa</span>
+                        <span className="Otheruser">Miaro Ramanantsoa</span>
                     </div>
                     <div onClick={() => handleClick(2)}>
                         <img src={user} alt="" />
-                        <span>Mirado Mamiarivony</span>
+                        <span className="Otheruser">Mirado Mamiarivony</span>
                     </div>
                     <div onClick={() => handleClick(1)}>
                         <img src={user} alt="" />
-                        <span>Tafita Anael</span>
+                        <span className="Otheruser">Tafita Anael</span>
                     </div>
                 </div>
                 <div className="message">
                     {data}
                     <div className="send">
                         <input type="text" name="message" placeholder="votre message" />
-                        <input type="submit" value="envoyer" onClick={writeMessage} />
+                        <label htmlFor="submit"> <i className="fas fa-paper-plane "></i> </label>
+                        <input id="submit" type="submit" value="envoyer" onClick={writeMessage} />
                     </div>
                 </div>
             </div>

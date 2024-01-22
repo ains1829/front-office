@@ -1,0 +1,59 @@
+.mes_annonce {
+  transform: translateY(70px);
+  width: 80%;
+  margin: 0 auto;
+  font-family: poppins_ligth;
+  margin-bottom: 90px;
+}
+.mes_annonce .annonce {
+  padding: 10px;
+  background: rgba(243, 242, 242, 0.137);
+  border-radius: 8px;
+}
+.mes_annonce .annonce .title {
+  font-size: 19px;
+  color: var(--var_marine);
+  font-weight: bold;
+}
+.mes_annonce .annonce .details {
+  display: flex;
+}
+.mes_annonce .annonce .details .carousels {
+  width: 50%;
+}
+.mes_annonce .annonce .details .caracteristique {
+  margin-left: 10px;
+  width: 50%;
+}
+.mes_annonce .annonce .details .caracteristique h1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.mes_annonce .annonce .details .caracteristique table {
+  width: 100%;
+}
+.mes_annonce .annonce .details .caracteristique table tr {
+  border: 1px solid var(--var_marine);
+}
+.mes_annonce .annonce .details .caracteristique table td {
+  padding: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+.mes_annonce .annonce .details .caracteristique .tarif {
+  background: var(--var_marine);
+  margin-top: 5px;
+  margin-left: auto;
+  width: 300px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+.mes_annonce .annonce .details .caracteristique .tarif .span {
+  color: white;
+}
+.mes_annonce .annonce .details .caracteristique .tarif .money {
+  color: #ffffff;
+  font-size: 25px;
+}/*# sourceMappingURL=mesannonce.css.map */

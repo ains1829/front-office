@@ -41,7 +41,7 @@ function DetailsAnnonce({idannonce}){
                     <span className="simple-label">Le vendeur a déclaré que le véhicule est dans un état supérieur à la moyenne pour les véhicules de cet âge </span>
                 </div>
                 <div className="contact">
-                    <Link>
+                    <Link to="#modele">
                         Contacter le vendeur
                     </Link>
                 </div>

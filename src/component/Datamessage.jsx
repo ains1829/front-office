@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import user from '../assets/image/5856.png';
+import user from '../assets/image/profile-2.svg';
 
 function Datamessage({ idpersonne }) {
   const [person, setPersonne] = useState({ id: '', names: '', firstnames: '' });

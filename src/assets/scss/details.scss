@@ -32,11 +32,16 @@
                 flex-direction: column;
             }
             .contact{
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 5px;
                 a{
+                    display: inline-block;
+                    border: 1px solid var(--var_marine);
                     text-decoration: none;
-                    color: white;
-                    background: var(--var_marine);
-                    border-radius: 5px;
+                    font-weight: bold;
+                    color: var(--var_marine);
+                    border-radius: 30px;
                     padding: 5px;
                     font-size: 13px;
                 }
@@ -51,12 +56,11 @@
         margin-left: 30px;
         width: 300px;
         height: 210px;
-        box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+        box-shadow: 0px 0px 12px 2px rgb(108 113 143 / 5%);
         display: flex;
         flex-direction: column;
         padding: 5px;
         border-radius: 5px;
-        position: sticky;
         .Title{
             text-align: center;
             font-weight: bold;
@@ -73,9 +77,9 @@
         .prix{
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
             margin-top: 5px;
             .price{
-                border-bottom: 1px solid rgb(0, 0, 0);
                 text-align: center;
                 font-size: 13px;
                 font-weight: bold;
@@ -84,7 +88,6 @@
                 background: var(--var_green);
                 font-size: 13px;
                 padding: 5px;
-                border-radius: 5px;
                 color: var(--white); 
                 font-weight: bold;
                 i{
@@ -95,7 +98,8 @@
         .annonce{
             margin-top: 10px;
             color: rgba(90, 87, 87, 0.406);
-            font-size: 14px;
+            font-size: 12px;
+            text-align: center;
         }
         a{
             margin-top: 10px;
@@ -111,21 +115,20 @@
             font-size: 14px;
             border-radius: 30px;
             i{
-                transform: rotate(100deg);
                 margin-right: 5px;
             }
         }
     }
     .choix-message{
         margin-top: 40px;
-        box-shadow: 0px 0px 4px 3px rgba(54, 44, 242, 0.086);
+        box-shadow: 0px 0px 12px 2px rgb(108 113 143 / 5%);
         display: flex;
         flex-direction: column;
         padding: 10px;
         margin-left: 30px;
         span{
             border: 1px solid var(--var_marine);
-            padding: 2px;
+            padding: 4px;
             border-radius: 30px;
             margin-top: 5px;
             text-align: center;

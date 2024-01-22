@@ -1,0 +1,59 @@
+.mes_annonce{
+    transform: translateY(70px);
+    width: 80%;
+    margin: 0 auto;
+    font-family: poppins_ligth;
+    .annonce{
+        padding: 10px;
+        background: rgba(243, 242, 242, 0.137);
+        border-radius: 8px;
+        .title{
+            font-size: 19px;
+            color: var(--var_marine);
+            font-weight: bold;
+        }
+        .details{
+            display: flex;
+            .carousels{
+                width: 50%;
+            }
+            .caracteristique{
+                margin-left: 10px;
+                width: 50%;
+                h1{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                table{
+                    width: 100%;
+                    tr{
+                        border: 1px solid var(--var_marine);
+                    }
+                    td{
+                        padding: 8px;
+                        font-size: 13px;
+                        font-weight: bold;
+                        text-align: center;   
+                    }
+                }
+                .tarif{
+                    background: var(--var_marine);
+                    margin-top: 5px;
+                    margin-left: auto;
+                    width: 300px;
+                    padding: 5px;
+                    text-align: center;
+                    border-radius: 5px;
+                    .span{
+                        color: white;
+                    }
+                    .money{
+                        color: #ffffff;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    margin-bottom: 90px;
+}

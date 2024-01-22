@@ -3,6 +3,8 @@
 @import url("./Recherche.css");
 @import url("./details.css");
 @import url("./message.css");
+@import url("./Favorie.css");
+@import url("./mesannonce.css");
 :root {
   --var_green: #BAFF29;
   --var_marine: #1A1B41;

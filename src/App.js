@@ -4,6 +4,8 @@ import Recherche from './page/Recherche';
 import Details from './page/Details';
 import Message from './page/Message';
 import Login from './page/Login';
+import Favoris from './page/Favoris';
+import Mesannonce from './page/Mesannonce';
 function App() { 
   const location = useLocation()
   return (
@@ -14,6 +16,8 @@ function App() {
       <Route path='/details/:id' Component={Details}></Route>
       <Route path='/message' Component={Message}></Route>
       <Route path='/login' Component={Login}></Route>
+      <Route path='/favorie' Component={Favoris}></Route>
+      <Route path='/mesannonce' Component={Mesannonce}></Route>
     </Routes>
   );
 }
