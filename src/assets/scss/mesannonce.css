@@ -7,7 +7,6 @@
 }
 .mes_annonce .annonce {
   padding: 10px;
-  background: rgba(243, 242, 242, 0.137);
   border-radius: 8px;
 }
 .mes_annonce .annonce .title {
@@ -55,5 +54,5 @@
 }
 .mes_annonce .annonce .details .caracteristique .tarif .money {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 19px;
 }/*# sourceMappingURL=mesannonce.css.map */

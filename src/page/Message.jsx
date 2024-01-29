@@ -4,7 +4,7 @@ import '../assets/scss/styles.css'
 import user from '../assets/image/profile-2.svg'
 import Datamessage from "../component/Datamessage"
 import '../assets/fontawesome-5/css/all.min.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function Message() {
     const [choix, setChoix] = useState(1);
     const [data, setData] = useState(<Datamessage key={choix} idpersonne={choix} />);
@@ -25,6 +25,7 @@ function Message() {
         setChoix(idpersonne);
         setData(<Datamessage key={idpersonne} idpersonne={idpersonne} />)
     }
+    // 
     return (
         <div className="content-data">
             <Header />
