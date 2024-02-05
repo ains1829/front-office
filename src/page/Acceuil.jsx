@@ -4,19 +4,35 @@ import '../assets/scss/styles.css'
 import Affiche from '../component/Affiche'
 import Card from '../component/Card'
 import Occasion from '../assets/image/occasion.jpg'
-import { useState } from 'react'
+import {useState } from 'react'
 import Footer from '../component/Footer'
-function Acceuils(){
-    const [countdata , setdata] = useState([1,2,3,4,5,6,7,8,9,10]);
-    const [totalComponents, setTotalComponents] = useState(6);
-    const [componentsPerPage, setComponentsPerPage] = useState(6);
-    const [currentPage, setCurrentPage] = useState(1);
-    const indexOfLastComponent = currentPage * componentsPerPage;
-    const currentData = countdata.slice(0, indexOfLastComponent);
-    console.log(countdata)
-    const hanldeButton = () =>{
-        setTotalComponents(totalComponents + 6);
-        setCurrentPage(Math.ceil((totalComponents + 6) / componentsPerPage));
+import CardSekeleton from '../component/CardSekeleton'
+function Acceuils() {
+    const [Isloading , setLoading] = useState(true)
+    const [Annonce_valider , setAnnonce] = useState([1,2,3,4,5,6,7,8])
+    // useEffect(() => {
+    //     setLoading(true);
+    //     fetch('http://192.168.43.240:3000/api/usermir/getPubAnnonces?iduser=0&nbaffiche=100&numlinebeforefirst=0')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             if (data.status === 200) {
+    //                 setAnnonce(data.data);
+    //                 console.log(data.data)
+    //                 setLoading(false)
+    //             } else {
+    //                 alert(data.message + "  status : " + data.status)
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.log("errorr : " + error)
+    //         });
+    // }, [])
+    setTimeout(()=>{
+        setLoading(false) ;
+    },10000)
+    const hanldeButton = () => {
+        console.log('next')
     }
     return (
         <div className='content-data'>
@@ -25,14 +41,30 @@ function Acceuils(){
                 <Affiche />
             </div>
             <div className='Annonce'>
-                {currentData.map((item, index) => (
-                    <Card key={index} object_annonce={Occasion} />
-                ))}
+                {
+                    Isloading ? <CardSekeleton /> : 
+                    <>
+                    {
+                        Annonce_valider &&
+                        Annonce_valider.map((item , index) =>(
+                            <Card key={index} object_annonce={Occasion} />
+                        ))
+                    }
+                    </>
+                }
             </div>
-            <div className='add' onClick={hanldeButton}> <i className='fas fa-plus'></i>  <span>voir plus</span> </div>
+            {
+                Isloading ? '' :
+                <>
+                    <div className='pagination'>
+                        <div className='previsous' onClick={hanldeButton}>  <span>Previous</span>  <i className='fas fa-arrow-left'></i></div>
+                        <div className='add' onClick={hanldeButton}> <i className='fas fa-arrow-right'></i>  <span>Next </span> </div>
+                    </div>
+                </>
+            }
             <Footer />
         </div>
-        
+
     )
 }
 export default Acceuils

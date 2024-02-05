@@ -1,49 +1,54 @@
+import '../assets/fontawesome-5/css/all.min.css'
 function FormRecherche(){
     return (
         <div className="recherche">
-            <span className="title">Recherche</span>
+            <span className="title">Rechercher votre voiture</span>
             <form>
-                <div>
-                    <label htmlFor="">mot cles</label>
-                    <input type="text" name="" id="" />
+                <div className="mot-cles">
+                    <div>
+                        <input type="text" name="" id="" placeholder="Mot cles"/>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="">Categorie</label>
-                    <select name="" id="">
-                        <option value="">defaut</option>
-                        <option value="">Familliale</option>
-                        <option value="">Sport</option>
-                    </select>
+                <div className="details">
+                    <div>
+                        <label htmlFor="">Categorie</label>
+                        <select name="" id="">
+                            <option value="">defaut</option>
+                            <option value="">Familliale</option>
+                            <option value="">Sport</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="">Marque</label>
+                        <select name="" id="">
+                            <option value="">default</option>
+                            <option value="">Mercedes</option>
+                            <option value="">Ferrari</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="">Modele</label>
+                        <select name="" id="">
+                            <option value="">defaut</option>
+                            <option value="">Furari-Modele</option>
+                            <option value="">SupraX-100</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="">Annee</label>
+                        <input type="number" />
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="">Marque</label>
-                    <select name="" id="">
-                        <option value="">default</option>
-                        <option value="">Mercedes</option>
-                        <option value="">Ferrari</option>
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="">Modele</label>
-                    <select name="" id="">
-                        <option value="">defaut</option>
-                        <option value="">Furari-Modele</option>
-                        <option value="">SupraX-100</option>
-                    </select>
-                </div>
-                <div>
+                <div className="prix_content">
                     <label htmlFor="">Prix</label>
                     <div className="prix">
                         <input className="min" type="text" placeholder="min" />
                         <input type="text" placeholder="max" />
                     </div>
                 </div>
-                <div>
-                    <label htmlFor="">Date sortie</label>
-                    <input type="date" />
-                </div>
-                <div>
-                    <input type="submit" value="Rechercher" />
+                <div className="submit">
+                    <label className='submit_' htmlFor="submit_button">Recherche <i className='fas fa-arrow-right'></i></label>
+                    <input id="submit_button" style={{display:"none"}} type="submit" value="Rechercher" />
                 </div>
             </form>
         </div>

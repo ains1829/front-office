@@ -1,16 +1,17 @@
 .Details {
-  transform: translateY(80px);
   display: flex;
   justify-content: center;
-  margin-bottom: 90px;
 }
 .Details .details {
   display: flex;
   flex-direction: column;
   padding: 5px;
   justify-content: center;
-  width: 700px;
+  width: 900px;
   margin-left: 10px;
+}
+.Details .details .carousels img {
+  border-radius: 8px;
 }
 .Details .details .about-car {
   font-family: poppins_ligth;
@@ -25,7 +26,11 @@
   margin-top: 10px;
 }
 .Details .details .about-car div span {
-  font-size: 16px;
+  font-size: 14px;
+}
+.Details .details .about-car div .desc {
+  font-size: 14px;
+  font-weight: bold;
 }
 .Details .details .about-car .vendeur {
   display: flex;
@@ -57,25 +62,17 @@
   font-family: poppins_ligth;
   margin-left: 30px;
   width: 300px;
-  height: 210px;
-  box-shadow: 0px 0px 12px 2px rgba(108, 113, 143, 0.05);
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(130, 130, 130, 0.076);
+  padding: 10px;
   border-radius: 5px;
 }
 .Details .modele .Title {
   text-align: center;
   font-weight: bold;
+  font-size: 18px;
   padding: 3px;
-}
-.Details .modele .caracteristique {
-  width: 90%;
-  margin-top: 5px;
-  font-family: poppins_ligth;
-  text-align: center;
-  font-size: 15px;
-  color: rgba(190, 190, 190, 0.661);
 }
 .Details .modele .prix {
   display: flex;
@@ -83,25 +80,21 @@
   align-items: center;
   margin-top: 5px;
 }
+.Details .modele .prix .p {
+  font-size: 13px;
+  font-weight: bold;
+}
 .Details .modele .prix .price {
   text-align: center;
-  font-size: 13px;
+  font-size: 19px;
   font-weight: bold;
-}
-.Details .modele .prix .bonne {
-  background: var(--var_green);
-  font-size: 13px;
-  padding: 5px;
-  color: var(--white);
-  font-weight: bold;
-}
-.Details .modele .prix .bonne i {
-  color: var(--white);
+  color: var(--var_marine);
 }
 .Details .modele .annonce {
   margin-top: 10px;
   color: rgba(90, 87, 87, 0.406);
   font-size: 12px;
+  font-weight: bold;
   text-align: center;
 }
 .Details .modele a {
@@ -139,5 +132,5 @@
   transition: 0.4s;
 }
 .Details .choix-message span:hover {
-  background: rgba(0, 195, 255, 0.066);
+  letter-spacing: 0.3px;
 }/*# sourceMappingURL=details.css.map */

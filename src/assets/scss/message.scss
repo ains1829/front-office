@@ -1,15 +1,14 @@
 .content-message{
-    transform: translateY(80px);
     display: flex;
     justify-content: center;
     width: 90%;
     margin: 0 auto;
     font-family: poppins_ligth;
     .person{
-        box-shadow: 0px 0px 4px 0px rgba(194, 194, 194, 0.24);
-        width: 300px;
-        height: 600px;
-        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(233, 233, 233, 0.226);
+        width: 400px;
+        height: 700px;
+        border-radius: 20px 20px 0px 0px;
         overflow-y: auto;
         h1{
             color: var(--var_marine);
@@ -19,67 +18,78 @@
             padding: 13px;
             text-align: center;
         }
-        div{
-            padding: 5px;
+        .person_click{
+            padding: 9px;
             transition: .4s;
             display: flex;
             align-items: center;
-            img{
-                width: 50px;
-                height: 50px;
-            }
-            .Otheruser{
-                font-size: 16px;
-                font-weight: bold;
-                margin-left: 5px;
-            }
-            margin-top: 5px;
+            border-radius: 5px;
+            margin-top: 9px;
             cursor: pointer;
+            img{
+                width: 45px;
+                height: 45px;
+            }
+            .content-little{
+                margin-left: 8px;
+                display: flex;
+                flex-direction: column;
+                .Otheruser{
+                    font-size: 15px;
+                    font-weight: bolder;
+                }
+                .litlle-mes{
+                    font-size: 13px;
+                    margin-top: 4px;
+                    color: gray;
+                }
+            }
+                
         }
-        div:hover{
-            background: var(--var_light);
+        .person_click:hover{
+            background: rgba(219, 218, 218, 0.105);
         }
     }
     .message{
         width: 80%;
-        box-shadow: 0px 0px 4px 0px rgba(194, 194, 194, 0.24);
         margin-left: 10px;
+        border-radius: 20px 20px 0px 0px;
         .data{
             border-radius: 5px;
             height: 90%;
             overflow-y: auto;
             .content-persone{
-                display: flex;
+                display: flex; 
                 align-items: center;
                 padding: 5px;
+                color: var(--var_marine);
+                font-weight: bold;
+                box-shadow: 0px 0px 4px 1px rgba(203, 203, 203, 0.169);
                 img{
-                    width: 65px;
-                    height: 65px;
+                    width: 55px;
+                    height: 55px;
                 }
                 .name{
-                    font-weight: bold;
-                    margin-left: 5px;
+                    margin-left: 10px;
                     font-size: 20px;
                 }
-                background-color: rgba(233, 233, 233, 0.166);
             }
             .messaging{
                 display: flex;
                 flex-direction: column;
                 div{
-                    width: 300px !important;
+                    width: 350px !important;
                     .me{
+                        display: inline-block;
                         margin-right: 5px;
                         border-top-left-radius: 148px;
                         border-bottom-right-radius: 114px;
                         border-bottom-left-radius: 134px;
-                        background: #7247fbd9;
                         margin-top: 5px;
                         font-size: 14px;
                         padding: 8px;
                         color: white;
-                        display: inline-block;
-                        flex-wrap: wrap;
+                        background: var(--bs-blue);
                     
                     }
                     .annonceur{
@@ -88,14 +98,14 @@
                         display: inline-block;
                         margin-top: 5px;
                         padding: 8px;
-                        box-shadow: 0px 0px 3px 0px rgb(156 156 156 / 26%);
+                        box-shadow: 0px 0px 3px 0px rgba(156, 156, 156, 0.136);
                         border-top-right-radius: 156px;
                         border-bottom-right-radius: 178px;
                         border-bottom-left-radius: 141px;
                     }
                 }
                 .me_boite{
-                    width: 300px;
+                    width: 350px !important;
                     margin-left: auto;
                     display: flex;
                     flex-direction: row-reverse;

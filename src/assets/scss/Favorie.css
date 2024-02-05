@@ -1,56 +1,80 @@
 .favorie {
-  transform: translateY(80px);
   font-family: poppins_ligth;
   color: var(--var_marine);
-  margin-bottom: 90px;
-}
-.favorie .card-favorie {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  padding: 5px;
-  padding-bottom: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  gap: 10px 20px;
 }
-.favorie .card-favorie a {
+.favorie .nodata {
+  margin: 0 auto;
+}
+.favorie .nodata img {
+  width: 300px;
+}
+.favorie .card-object {
   font-family: poppins_ligth;
-  display: flex;
+  padding: 5px;
+}
+.favorie .card-object a {
   text-decoration: none;
-  align-items: center;
-  color: black;
-}
-.favorie .card-favorie a div img {
-  width: 250px;
-  height: 200px;
-}
-.favorie .card-favorie a .some-details {
+  width: 350px;
   display: flex;
-  margin-left: 10px;
   flex-direction: column;
 }
-.favorie .card-favorie a .some-details span {
-  font-size: 14px;
+.favorie .card-object a .gray {
+  width: 100%;
+  height: 200px;
+  animation: animate 1s infinite;
+  border-radius: 5px;
+  background: var(--var_gray);
+}
+.favorie .card-object a .gray-span {
+  padding: 8px;
+  border-radius: 5px;
+  animation: animate 1s infinite;
+  background: var(--var_gray);
+}
+@keyframes animate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.favorie .card-object a img {
+  border-radius: 10px;
+  width: 100%;
+  height: 240px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.favorie .card-object .some-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 5px;
 }
-.favorie .card-favorie a .some-details label {
+.favorie .card-object .some-details .name {
+  font-weight: bold;
   font-size: 14px;
-  margin-top: 10px;
-  font-weight: bold;
 }
-.favorie .card-favorie a .some-details .nom {
+.favorie .card-object .some-details .favoris {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.favorie .card-object .some-details .favoris span {
+  font-weight: bold;
+  font-size: 14px;
   color: var(--var_marine);
-  font-weight: bold;
-  font-size: 18px;
 }
-.favorie .card-favorie .favoris .isfavorie {
-  background: rgba(49, 46, 245, 0.499);
-}
-.favorie .card-favorie .favoris .not {
-  background: rgba(141, 141, 141, 0.252);
-}
-.favorie .card-favorie .favoris i {
-  color: rgba(255, 255, 255, 0.98);
-  padding: 8px;
-  border-radius: 40px;
-  display: inline-block;
-  font-size: 16px;
+.favorie .card-object .some-details .favoris i {
+  color: var(--var_marine);
 }/*# sourceMappingURL=Favorie.css.map */

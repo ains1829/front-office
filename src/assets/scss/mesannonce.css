@@ -1,58 +1,156 @@
 .mes_annonce {
-  transform: translateY(70px);
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   font-family: poppins_ligth;
-  margin-bottom: 90px;
+}
+.mes_annonce .span-skeleton {
+  display: flex;
+  flex-direction: column;
+}
+.mes_annonce .span-skeleton span {
+  background: var(--var_gray);
+  width: 250px;
+  padding: 20px;
+  margin-top: 5px;
+  animation: animate 1s infinite;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+.mes_annonce .content-skeleton {
+  margin-top: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.mes_annonce .content-skeleton .img-selecton {
+  width: 98%;
+  height: 500px;
+  border-radius: 20px;
+  background: var(--var_gray);
+  animation: animate 1s infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mes_annonce i {
+  width: 30px;
+  height: 30px;
+  background: var(--var_marine);
+  color: white;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mes_annonce .en_vente {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  padding: 8px;
+}
+.mes_annonce .en_vente div {
+  display: flex;
+  align-items: center;
+}
+.mes_annonce .en_vente div span {
+  margin-left: 15px;
+  font-size: 14px;
+  font-family: poppins_ligth;
+}
+.mes_annonce .favoris {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  padding: 8px;
+  margin-top: 2px;
+}
+.mes_annonce .favoris div {
+  display: flex;
+  align-items: center;
+}
+.mes_annonce .favoris div span {
+  font-size: 13px;
+  margin-left: 15px;
+  font-family: poppins_ligth;
+}
+.mes_annonce .nombre_voiture {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  padding: 8px;
+  margin-top: 2px;
+}
+.mes_annonce .nombre_voiture div {
+  display: flex;
+  align-items: center;
+}
+.mes_annonce .nombre_voiture div span {
+  font-size: 14px;
+  font-family: poppins_ligth;
+  margin-left: 15px;
 }
 .mes_annonce .annonce {
   padding: 10px;
   border-radius: 8px;
 }
 .mes_annonce .annonce .title {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--var_marine);
   font-weight: bold;
 }
 .mes_annonce .annonce .details {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  gap: 10px;
 }
-.mes_annonce .annonce .details .carousels {
-  width: 50%;
+.mes_annonce .annonce .details .image-gallery {
+  width: 720px;
+  border-radius: 20px;
+}
+.mes_annonce .annonce .details .image-gallery img {
+  border-radius: 20px;
+}
+.mes_annonce .annonce .details .image-gallery .image-gallery-right-nav .image-gallery-svg {
+  font-size: 5px !important;
+  padding: 5px;
+}
+.mes_annonce .annonce .details .image-gallery .image-gallery-left-nav .image-gallery-svg {
+  font-size: 5px !important;
+  padding: 5px !important;
 }
 .mes_annonce .annonce .details .caracteristique {
-  margin-left: 10px;
   width: 50%;
 }
 .mes_annonce .annonce .details .caracteristique h1 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
+  margin-top: 5px;
 }
 .mes_annonce .annonce .details .caracteristique table {
   width: 100%;
 }
 .mes_annonce .annonce .details .caracteristique table tr {
-  border: 1px solid var(--var_marine);
+  border: none;
+  border-bottom: 0.1px solid rgba(160, 161, 208, 0.04);
+  font-size: 15px;
 }
 .mes_annonce .annonce .details .caracteristique table td {
   padding: 8px;
-  font-size: 13px;
+}
+.mes_annonce .annonce .details .caracteristique table .of, .mes_annonce .annonce .details .caracteristique table .simple-label {
   font-weight: bold;
-  text-align: center;
-}
-.mes_annonce .annonce .details .caracteristique .tarif {
-  background: var(--var_marine);
-  margin-top: 5px;
-  margin-left: auto;
-  width: 300px;
-  padding: 5px;
-  text-align: center;
-  border-radius: 5px;
-}
-.mes_annonce .annonce .details .caracteristique .tarif .span {
-  color: white;
-}
-.mes_annonce .annonce .details .caracteristique .tarif .money {
-  color: #ffffff;
-  font-size: 19px;
 }/*# sourceMappingURL=mesannonce.css.map */

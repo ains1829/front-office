@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import Mycarousel from "./Carousel"
-function DetailsAnnonce({idannonce}){
+function DetailsAnnonce({ idannonce }) {
     console.log(idannonce)
     return (
         <div className="details">
@@ -16,10 +16,13 @@ function DetailsAnnonce({idannonce}){
                     <span className="label">Date d'annonce : </span><span className="simple-label">2023-05-04</span>
                 </div>
                 <div>
+                    <span className="label">Marque : </span><span className="simple-label">BMW</span>
+                </div>
+                <div>
                     <span className="label">Model : </span><span className="simple-label">Gorolla</span>
                 </div>
                 <div>
-                    <span className="label">Carburant :</span><span className="simple-label">Essence</span>
+                    <span className="label">Carburant : </span><span className="simple-label">Essence</span>
                 </div>
                 <div>
                     <span className="label">Vitesse : </span><span className="simple-label">205km/h</span>
@@ -37,8 +40,8 @@ function DetailsAnnonce({idannonce}){
                     <span className="label">Annee : 2021</span>
                 </div>
                 <div className="vendeur">
-                    <label htmlFor="">Garantie du vendeur</label>
-                    <span className="simple-label">Le vendeur a déclaré que le véhicule est dans un état supérieur à la moyenne pour les véhicules de cet âge </span>
+                    <label htmlFor="">Description</label>
+                    <span className="desc">Le vendeur a déclaré que le véhicule est dans un état supérieur à la moyenne pour les véhicules de cet âge </span>
                 </div>
                 <div className="contact">
                     <Link to="#modele">
@@ -46,7 +49,7 @@ function DetailsAnnonce({idannonce}){
                     </Link>
                 </div>
             </div>
-    </div>
+        </div>
     )
 }
 export default DetailsAnnonce

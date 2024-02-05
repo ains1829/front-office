@@ -1,58 +1,73 @@
 .Annonce {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 5px;
   margin-bottom: 8px;
+  gap: 10px 20px;
 }
 .Annonce .card-object {
   font-family: poppins_ligth;
-  box-shadow: 0px 0px 10px 4px rgba(111, 110, 110, 0.083);
-  border-radius: 5px;
   padding: 5px;
-  margin-top: 10px;
-  margin-left: 60px;
 }
 .Annonce .card-object a {
   text-decoration: none;
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
 }
-.Annonce .card-object a img {
-  border-radius: 5px;
+.Annonce .card-object a .gray {
   width: 100%;
+  height: 200px;
+  animation: animate 1s infinite;
+  border-radius: 5px;
+  background: var(--var_gray);
+}
+.Annonce .card-object a .gray-span {
+  padding: 8px;
+  border-radius: 5px;
+  animation: animate 1s infinite;
+  background: var(--var_gray);
+}
+@keyframes animate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.Annonce .card-object a img {
+  border-radius: 10px;
+  width: 100%;
+  height: 240px;
   background-repeat: no-repeat;
   background-size: contain;
 }
-.Annonce .card-object a .some-details {
+.Annonce .card-object .some-details {
   display: flex;
-  flex-direction: column;
-}
-.Annonce .card-object a .some-details span {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 5px;
 }
-.Annonce .card-object a .some-details .prix {
-  background: var(--var_blue);
-  font-size: 13px !important;
-  padding: 5px;
-  width: 130px;
-  color: var(--white) !important;
-  text-align: center;
-  border-radius: 30px;
+.Annonce .card-object .some-details .name {
+  font-weight: bold;
+  font-size: 14px;
 }
-.Annonce .card-object .favoris {
+.Annonce .card-object .some-details .favoris {
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
 }
-.Annonce .card-object .favoris i {
-  color: var(--var_blue);
-  font-size: 18px;
-  transform: translateX(-5px);
+.Annonce .card-object .some-details .favoris span {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--var_marine);
+}
+.Annonce .card-object .some-details .favoris i {
+  color: var(--var_marine);
 }/*# sourceMappingURL=Card.css.map */

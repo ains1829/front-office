@@ -1,56 +1,96 @@
 .formulaire {
   display: flex;
-  transform: translateY(80px);
+  flex-direction: column;
   width: 100%;
-  margin-bottom: 90px;
 }
 .formulaire .recherche {
-  width: 300px;
-  height: 500px;
-  padding: 15px;
-  border-radius: 0;
-  margin-left: 10px;
-  box-shadow: 0px 0px 6px 1px rgba(142, 144, 143, 0.105);
+  font-family: poppins_ligth;
+  width: 70%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.086);
 }
 .formulaire .recherche .title {
-  font-family: poppins_ligth;
   font-weight: bold;
 }
-.formulaire .recherche div {
+.formulaire .recherche .mot-cles {
+  margin-top: 10px;
+}
+.formulaire .recherche .mot-cles div input {
+  width: 30%;
+  font-size: 13px;
+  padding: 9px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: rgba(241, 241, 241, 0.516);
+}
+.formulaire .recherche .details {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.formulaire .recherche .details div {
   display: flex;
   flex-direction: column;
 }
-.formulaire .recherche div label {
+.formulaire .recherche .details div label {
+  font-size: 14px;
+  font-family: poppins_medium !important;
+  margin-bottom: 5px;
+}
+.formulaire .recherche .details div input, .formulaire .recherche .details div select {
+  background: rgba(241, 241, 241, 0.516);
+  width: 150px;
+  padding: 9px;
   font-size: 13px;
-  font-family: poppins_ligth;
-  font-weight: bolder;
-  margin-top: 5px;
-}
-.formulaire .recherche div input, .formulaire .recherche div select {
-  font-family: poppins_ligth;
-  padding: 8px;
   border: none;
-  background: var(--var_light);
+  border-radius: 6px;
   outline: none;
-  border-radius: 8px;
 }
-.formulaire .recherche div input[type=submit] {
+.formulaire .recherche .prix_content label {
+  font-size: 14px;
+  font-family: poppins_medium !important;
+  margin-bottom: 5px;
+}
+.formulaire .recherche .prix_content .prix {
+  display: flex;
+  gap: 10px;
+}
+.formulaire .recherche .prix_content .prix input, .formulaire .recherche .prix_content .prix select {
+  background: rgba(241, 241, 241, 0.516);
+  width: 150px;
+  padding: 9px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+.formulaire .recherche .submit {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.formulaire .recherche .submit .submit_ {
   background: var(--var_marine);
   color: white;
-  font-family: poppins_medium;
-  margin-top: 10px;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 30px;
 }
-.formulaire .recherche div .prix {
-  width: 100%;
-  display: flex;
-  flex-direction: row !important;
-}
-.formulaire .recherche div .prix input {
-  width: 100%;
-  margin-left: 1px;
+.formulaire .recherche .submit i {
+  font-size: 11px;
+  transform: translateX(1px);
+  transition: 0.5s;
 }
 .formulaire .content-annonce {
-  width: 75%;
+  width: 100%;
+}
+.formulaire .content-annonce .nodata {
+  margin: 0 auto;
+}
+.formulaire .content-annonce .nodata img {
+  width: 300px;
 }
 .formulaire .content-annonce .Annonce {
   width: 100%;
@@ -58,53 +98,69 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 5px;
-  margin-bottom: 8px;
+  gap: 10px 20px;
 }
 .formulaire .content-annonce .Annonce .card-object {
   font-family: poppins_ligth;
-  box-shadow: 0px 0px 10px 4px rgba(111, 110, 110, 0.083);
-  border-radius: 5px;
   padding: 5px;
-  margin-top: 10px;
-  margin-left: 40px;
 }
 .formulaire .content-annonce .Annonce .card-object a {
   text-decoration: none;
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
 }
-.formulaire .content-annonce .Annonce .card-object a img {
-  border-radius: 5px;
+.formulaire .content-annonce .Annonce .card-object a .gray {
   width: 100%;
+  height: 200px;
+  animation: animate 1s infinite;
+  border-radius: 5px;
+  background: var(--var_gray);
+}
+.formulaire .content-annonce .Annonce .card-object a .gray-span {
+  padding: 8px;
+  border-radius: 5px;
+  animation: animate 1s infinite;
+  background: var(--var_gray);
+}
+@keyframes animate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.formulaire .content-annonce .Annonce .card-object a img {
+  border-radius: 10px;
+  width: 100%;
+  height: 240px;
   background-repeat: no-repeat;
   background-size: contain;
 }
-.formulaire .content-annonce .Annonce .card-object a .some-details {
+.formulaire .content-annonce .Annonce .card-object .some-details {
   display: flex;
-  flex-direction: column;
-}
-.formulaire .content-annonce .Annonce .card-object a .some-details span {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 5px;
 }
-.formulaire .content-annonce .Annonce .card-object a .some-details .prix {
-  background: var(--var_blue);
-  font-size: 13px !important;
-  padding: 5px;
-  width: 130px;
-  color: var(--white) !important;
-  text-align: center;
+.formulaire .content-annonce .Annonce .card-object .some-details .name {
+  font-weight: bold;
+  font-size: 14px;
 }
-.formulaire .content-annonce .Annonce .card-object .favoris {
+.formulaire .content-annonce .Annonce .card-object .some-details .favoris {
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
 }
-.formulaire .content-annonce .Annonce .card-object .favoris i {
-  color: var(--var_blue);
-  font-size: 18px;
-  transform: translateX(-5px);
+.formulaire .content-annonce .Annonce .card-object .some-details .favoris span {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--var_marine);
+}
+.formulaire .content-annonce .Annonce .card-object .some-details .favoris i {
+  color: var(--var_marine);
 }/*# sourceMappingURL=Recherche.css.map */

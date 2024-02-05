@@ -5,6 +5,7 @@
     --var_blue_sky : #C2E7DA;
     --var_blue : #6290C3; 
     --white : white ;
+    --var_gray : rgba(231, 231, 231, 0.625) ;
 }
 @font-face {
     font-family: poppins_medium;
@@ -39,14 +40,12 @@ body{
         transition: .5s;
         display: flex;
         align-items: center;
-        position: fixed;
+        // position: fixed;
         justify-content: space-between;
         background: #1a1b4100;
-        z-index: 99;
         width: 100%;
+        height: 55px;
         .logo{
-            width: 200px;
-            height: 50px;
             img{
                 width: 100%;
                 background-size: contain;
@@ -55,13 +54,18 @@ body{
         }
         .nav-bar{
             span{
-                font-size: 14px;
-                font-weight: bold;
+                font-size: 13px;
+                font-weight: lighter;
                 margin-left: 80px;
                 font-family: poppins_ligth !important;
                 a{
                     text-decoration: none;
                     color: black;
+                    font-weight: bold;
+                }
+                a:hover{
+                    color: rgb(186, 186, 186);
+                    transition: .1s;
                 }
             }
         }
@@ -69,83 +73,63 @@ body{
             text-decoration: none;
             transform: translateX(-5px);
             width: 150px;
-            background: var(--var_marine);
             text-align: center;
             border-radius: 30px;
             padding: 5px;
             .seconnecter{
                 font-size: 13px;
-                color: var(--var_light);
+                color: var(--var_marine);
                 font-family: poppins_medium;
             }
         }
-        margin-bottom: 50px;
+        margin-bottom: 10px;
     }
     .affiche{
-        background-image: url('../image/femme-appreciant-son-independance-financiere-tout-achetant-voiture.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-clip: inherit;
-        width: 100%;
-        height: 650px;
+        width: 98%;
+        border-radius: 30px;
+        margin: 0 auto;
         .pub{
-            z-index: 99;
             font-family: poppins_medium;
-            transform: translateY(150px);
-            font-weight: bold;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: flex-start;
+            width: 100%;
             span{
-                color: var(--var_light);
-                width: 850px;
-                font-size: 60px;
+                color: var(--var_marine);
+                font-size: 110px;
+                margin-left: 25px;
                 letter-spacing: 5px;
+                font-weight: bold;
                 text-shadow: rgba(0,0,0,0.3);
-            }
-            a{
-                display: flex;
-                background: var(--var_marine);
-                font-family: poppins_medium;
-                width: 200px;
-                justify-content: center;
-                text-decoration: none;
-                color: var(--var_light);
-                border-radius: 30px;
-                font-size: 14px;
-                padding: 10px;
-                box-shadow: 0px 0px 12px 6px rgb(0 34 62 / 60%);
             }
         }
     }
-    .add{
-        width: 200px ;
-        margin: 0 auto ;
-        padding: 8px;
-        background: var(--var_marine) ;
-        border-radius: 30px;
-        text-align: center;
-        color: white;
+    .pagination{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px ;
-        cursor: pointer;
-        span{
+        gap: 10px;
+        width: 95%;
+        margin: 0 auto;
+        div{
+            display: flex;
+            align-items: center;
             font-family: poppins_ligth;
-            font-weight: bold;
-            font-size: 12px;
-        }
-        i{
-            transform: translateX(-5px);
-            font-size: 12px;
+            font-size: 14px;
+            width: 120px;
+            gap: 5px;
+            i{
+                color: var(--var_marine);
+            }
         }
     }
     footer{
         width: 100% ;
         display: flex ;
+        display: none;
         justify-content: space-around;
-        background: var(--var_light);
+        background: #f3f3f338;
         font-family: poppins_ligth;
         .logo{
             padding: 10px;

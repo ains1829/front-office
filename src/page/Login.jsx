@@ -2,7 +2,19 @@ import '../assets/scss/login.css'
 import '../assets/fontawesome-5/css/all.min.css'
 import logo from '../assets/image/1-removebg-preview.png';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 function Login() {
+    const [email , setEmail] = useState('') 
+    const [password, setPassword] = useState('')
+    const handle_email = (event) =>{
+        setEmail(event.target.value)
+    }
+    const handle_password = (event) =>{
+        setPassword(event.target.value)
+    }
+    const submit = (event) => {
+        event.preventDefault()
+    }
     return (
         <div className="div-content-form">
             <form>
@@ -12,16 +24,16 @@ function Login() {
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" />
+                    <input type="email" onChange={handle_email} name="email" value={email} required />
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" />
+                    <input type="password" onChange={handle_password} name="password" value={password} required />
                 </div>
                 <div>
                     <label className='submit' htmlFor="submit">Connecter <i className='fas fa-arrow-right'></i></label>
-                    <input id="submit" type="submit" value="" />
-                </div>3
+                    <input onClick={submit} id="submit" type="submit" value="" />
+                </div>
                 <Link to='/acceuil'><i className='fas fa-arrow-left'></i> Retour </Link>
             </form>
         </div>

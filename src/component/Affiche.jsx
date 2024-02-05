@@ -7,9 +7,6 @@ function Affiche(){
                 <span>
                     Trouvez la voiture d'occasion parfaite sur notre site des maintenant
                 </span>
-                <Link>
-                    Rejoingnez Nous
-                </Link>
             </div>
         </div>
     )
