@@ -1,7 +1,7 @@
 function ChoixMessage({idannonce}){
     console.log(idannonce)
     function check_choix(value){
-       alert("Message envoyer")
+       alert(value)
     }
     return(
         <div className="choix-message">

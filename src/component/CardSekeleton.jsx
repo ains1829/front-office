@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 function CardSekeleton (){
   return(
-    Array(8).fill(0).map((item , index) =>(
+    Array(8).fill(0).map((index) =>(
       <div key={index} className="card-object">
           <Link to="#">
               <div className="gray"></div>
