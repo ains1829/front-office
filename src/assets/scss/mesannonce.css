@@ -53,52 +53,33 @@
   justify-content: center;
   align-items: center;
 }
-.mes_annonce .en_vente {
+.mes_annonce .content-data-me {
   display: flex;
-  justify-content: space-between;
-  width: 30%;
-  padding: 8px;
+  flex-direction: column;
+  gap: 0px 10px;
 }
-.mes_annonce .en_vente div {
-  display: flex;
-  align-items: center;
-}
-.mes_annonce .en_vente div span {
-  margin-left: 15px;
-  font-size: 14px;
-  font-family: poppins_ligth;
-}
-.mes_annonce .favoris {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  padding: 8px;
-  margin-top: 2px;
-}
-.mes_annonce .favoris div {
+.mes_annonce .content-data-me div {
   display: flex;
   align-items: center;
-}
-.mes_annonce .favoris div span {
-  font-size: 13px;
-  margin-left: 15px;
-  font-family: poppins_ligth;
-}
-.mes_annonce .nombre_voiture {
-  display: flex;
   justify-content: space-between;
-  width: 30%;
-  padding: 8px;
-  margin-top: 2px;
+  width: 98%;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 15px;
+  border-bottom: 2px dotted rgba(44, 43, 43, 0.666);
 }
-.mes_annonce .nombre_voiture div {
-  display: flex;
-  align-items: center;
+.mes_annonce .content-data-me div span {
+  color: black;
+  font-weight: bold;
 }
-.mes_annonce .nombre_voiture div span {
-  font-size: 14px;
-  font-family: poppins_ligth;
-  margin-left: 15px;
+.mes_annonce .content-data-me div .voiture_andy {
+  color: var(--var_marine);
+  width: 200px;
+  padding: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 19px;
 }
 .mes_annonce .annonce {
   padding: 10px;
@@ -118,11 +99,10 @@
   gap: 10px;
 }
 .mes_annonce .annonce .details .image-gallery {
-  width: 720px;
-  border-radius: 20px;
+  width: 700px;
 }
 .mes_annonce .annonce .details .image-gallery img {
-  border-radius: 20px;
+  border-radius: 5px;
 }
 .mes_annonce .annonce .details .image-gallery .image-gallery-right-nav .image-gallery-svg {
   font-size: 5px !important;
@@ -134,23 +114,62 @@
 }
 .mes_annonce .annonce .details .caracteristique {
   width: 50%;
+  display: flex;
+  flex-direction: column;
 }
-.mes_annonce .annonce .details .caracteristique h1 {
+.mes_annonce .annonce .details .caracteristique .name_voiture {
+  font-size: 80px;
+  font-weight: bold;
+  color: black !important;
+}
+.mes_annonce .annonce .details .caracteristique .by {
+  margin-top: 10px;
+}
+.mes_annonce .annonce .details .caracteristique .by span {
   font-size: 13px;
+}
+.mes_annonce .annonce .details .caracteristique .by .modele {
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 5px;
+  font-size: 35px;
 }
-.mes_annonce .annonce .details .caracteristique table {
-  width: 100%;
+.mes_annonce .annonce .details .caracteristique .by .aps {
+  margin-left: 20px;
 }
-.mes_annonce .annonce .details .caracteristique table tr {
-  border: none;
-  border-bottom: 0.1px solid rgba(160, 161, 208, 0.04);
-  font-size: 15px;
-}
-.mes_annonce .annonce .details .caracteristique table td {
-  padding: 8px;
-}
-.mes_annonce .annonce .details .caracteristique table .of, .mes_annonce .annonce .details .caracteristique table .simple-label {
+.mes_annonce .annonce .details .caracteristique .by .marque {
+  margin-left: 20px;
+  font-size: 30px;
   font-weight: bold;
+}
+.mes_annonce .annonce .details .caracteristique .prix {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px dotted black;
+  color: rgb(0, 0, 0);
+  font-weight: lighter;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+.mes_annonce .annonce .details .caracteristique .prix .pir {
+  font-weight: bold;
+  font-size: 25px;
+}
+.mes_annonce .annonce .details .caracteristique .caracte {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+.mes_annonce .annonce .details .caracteristique .caracte .about div {
+  margin-top: 20px;
+}
+.mes_annonce .annonce .details .caracteristique .caracte .about div span {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.mes_annonce .annonce .details .caracteristique .caracte .about div .label {
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
 }/*# sourceMappingURL=mesannonce.css.map */

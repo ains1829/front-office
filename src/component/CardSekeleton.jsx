@@ -1,4 +1,3 @@
-import Skeleton from "react-loading-skeleton"
 import { Link } from "react-router-dom"
 function CardSekeleton (){
   return(

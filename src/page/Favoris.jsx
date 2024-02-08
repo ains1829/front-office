@@ -8,9 +8,15 @@ import { useState } from 'react'
 import Card from '../component/Card'
 import CardSekeleton from '../component/CardSekeleton'
 import nodata from '../assets/image/9169253.jpg'
+import { useNavigate } from 'react-router-dom'
 function Favoris() {
     const countdata = [] 
     const [Isloading , setLoading] = useState(true) ;
+    const token = localStorage.getItem('token')
+    const navigate = useNavigate()
+    if(token === null){
+        navigate('/login')
+    }
     setTimeout(() =>{
         setLoading(false)
     },10000)

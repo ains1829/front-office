@@ -1,107 +1,89 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState , useRef , useLayoutEffect } from 'react';
 import user from '../assets/image/profile-2.svg';
 
-function Datamessage({ idpersonne }) {
+function Datamessage({ idpersonne , email }) {
   console.log(idpersonne)
+  const tokens = `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmR5QGdtYWlsLmNvbSIsImlhdCI6MTcwNzE2NTkwMSwiZXhwIjoxNzA3MTY5NTAxfQ.j5iBBmAVn5tMYz8Iu2PRcrz3G4GmWN5PaoTvx-Sbd3A`
   const [Message, setMessage] = useState([]);
-  useEffect (()=>{
-    setMessage(
-  [
-  {
-    "userSend": {
-      "id": 1,
-      "username": "advertiser_username"
-    },
-    "contenu": "Welcome to our exciting announcement!"
-  },
-  {
-    "userSend": {
-      "id": 2,
-      "username": "your_username"
-    },
-    "contenu": "Hello there! How can I assist you today?"
-  },
-  {
-    "userSend": {
-      "id": 1,
-      "username": "advertiser_username"
-    },
-    "contenu": "Don't miss out on our exclusive offers!"
-  },
-  {
-    "userSend": {
-      "id": 1,
-      "username": "your_username"
-    },
-    "contenu": "I appreciate the information. Thank you!"
-  },
-  {
-    "userSend": {
-      "id": 1,
-      "username": "your_username"
-    },
-    "contenu": "I appreciate the information. Thank you!"
-  },
-  {
-    "userSend": {
-      "id": 2,
-      "username": "your_username"
-    },
-    "contenu": "I appreciate the information. Thank you!"
-  },
-]
+  useEffect(() => {
+    const fetchAPI = async () => {
+      try {
+        const response = await fetch(`http://192.168.43.79:3000/message/allMessage?idReceive=${idpersonne}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokens} `,
+            'Content-Type': 'application/json',
+          }
+        });
+        if(response.status === 200){
+          const result = await response.json();
+          setMessage(result.data);
+        }else{
+          alert('TOLOGIN')
+        }
+      } catch (error) {
+        console.log(error)
+      }
 
-  
-    )
-  } , [])
+    };
+    fetchAPI();
+  },[idpersonne , tokens]);
+  const [me , setMe] = useState(null)
+  useEffect(() => {
+    const fetchAPI = async () => {
+      try {
+        const response = await fetch(`http://192.168.43.79:3000/message/findUserConnected`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokens} `,
+            'Content-Type': 'application/json',
+          }
+        });
+        if(response.status === 200){
+          const result = await response.json();
+          setMe(result.data);
+        }else{
+          alert('TOLOGIN')
+        }
+      } catch (error) {
+        console.log(error)
+      }
 
-  // useEffect(() => {
-  //   try {
-
-  //   } catch (error) {
-
-  //   }
-  //   const fetchAPI = async () => {
-  //     try {
-  //       const response = await fetch('http://172.10.3.165:1000/message/allMessage?idReceive=2', {
-  //         method: 'GET',
-  //         headers: {
-  //           'Authorization': `Bearer ${token} `,
-  //           'Content-Type': 'application/json',
-  //         }
-  //       });
-  //       if (!response.ok) {
-  //         throw new Error('Erreur lors de la requête API');
-  //       }
-  //       const result = await response.json();
-  //       setMessage(result);
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-
-  //   };
-  //   fetchAPI();
-  // }, []);
-  console.log(Message);
+    };
+    fetchAPI();
+  },[tokens]);
+  const scrollContainerRef = useRef(null);
+  useLayoutEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      scrollContainer.scrollTop = scrollContainer.scrollHeight;
+    }
+  }, [Message]);
 
   return (
     <div className="data">
-      <div className="content-persone">
-        <img src={user} alt="" />
-        <span className="name"> Miarotiana Manarantsoa </span>
-      </div>
-      <div className="messaging">
-        {Message.map((element, items) => (
-          element.userSend.id === 1 ?
-            <div key={items} className='boite_annonceur'>
-              <span className='annonceur'>{element.contenu}</span>
-            </div>
-            :
-            <div key={items} className='me_boite'>
-              <span className='me'>{element.contenu}</span>
-            </div>
-        ))}
-      </div>
+      {
+        Message.length === 0 ? <div className='message-not-found'>No Message found</div> : 
+        <>
+          <div className="content-persone">
+            <img src={user} alt="" />
+            <span className="name"> {email} </span>
+        </div>
+        <div ref={scrollContainerRef} id='scroll-container' className="messaging" style={{ height: '600px', overflowY: 'scroll' }}>
+          {Message.map((element, items) => (
+            element.userSend.id !== me?.id ?
+              <div key={items} className='boite_annonceur'>
+                <span className='annonceur'>{element.contenu}</span>
+              </div>
+              :
+              <div key={items} className='me_boite'>
+                <span className='me'>{element.contenu}</span>
+              </div>
+          ))}
+        </div>
+        </>
+      }
+      
     </div>
   );
 }

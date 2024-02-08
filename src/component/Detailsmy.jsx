@@ -4,58 +4,53 @@ function Detailsmy({ id }) {
     return (
         <div className="annonce">
             <div className="details">
-                <ImageCarousel />
                 <div className="caracteristique">
-                    <h1>Caracteristique</h1>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td className="label">Nom voiture  </td>
-                                <td className="of">Tiguan wolsvagen</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Date d'annonce  </td>
-                                <td className="simple-label">2023-05-04</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Marque  </td>
-                                <td className="simple-label">BMW</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Model  </td>
-                                <td className="simple-label">Gorolla</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Carburant </td>
-                                <td className="simple-label">Essence</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Vitesse  </td>
-                                <td className="simple-label">205km/h</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Kilometrage </td>
-                                <td className="simple-label">4500 km</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Categorie  </td>
-                                <td className="simple-label">Famille , Sportif</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Transmission  </td>
-                                <td className="simple-label">Automatique</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Annee  </td>
-                                <td className="simple-label">2021</td>
-                            </tr>
-                            <tr>
-                                <td className="label">Tarif  </td>
-                                <td className="simple-label">1000000 ariary</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <span className="name_voiture">Tiguan wolsvagen</span>
+                        <div className="by">
+                            <span className="modele">Gorolla</span>
+                            <span className="aps">by</span>
+                            <span className="marque">BMW</span>
+                        </div>
+                        <div className="caracte">
+                            <div className="about">
+                                <div>
+                                    <span className="label">Annee : </span>
+                                    <span>2023</span>
+                                </div>
+                                <div>
+                                    <span className="label">Carburant : </span>
+                                    <span>Essence</span>
+                                </div>
+                                <div>
+                                    <span className="label">Transmission : </span>
+                                    <span>Automatique</span>
+                                </div>
+                                <div>
+                                    <span className="label">Place : </span>
+                                    <span>4</span>
+                                </div>
+                            </div>
+                            <div className="about">
+                                <div>
+                                    <span className="label">Vitesse : </span>
+                                    <span>205 km/h</span>
+                                </div>
+                                <div>
+                                    <span className="label">Kilometrage : </span>
+                                    <span>4500 km</span>
+                                </div>
+                                <div>
+                                    <span className="label">Categorie : </span>
+                                    <span>Famille , Sportif</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="prix">
+                            <span>Prix</span>
+                            <span className="pir"> 1000000 euro </span>
+                        </div>                  
                 </div>
+                <ImageCarousel />
             </div>
         </div>
     );

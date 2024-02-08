@@ -1,64 +1,79 @@
 import Footer from "../component/Footer"
 import FormRecherche from "../component/FormRecheche"
 import Header from "../component/Header"
-import Occasion from '../assets/image/occasion.jpg'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import '../assets/scss/Recherche.css'
 import '../assets/scss/styles.css'
 import Card from "../component/Card"
 import nodata from '../assets/image/9169253.jpg'
 import CardSekeleton from "../component/CardSekeleton"
+import axios from "axios"
 function Recherche(){
-    const [countdata , setdata] = useState([]);
     const [Isloading , setLoading] = useState(true)
-    const [totalComponents, setTotalComponents] = useState(8);
-    const [componentsPerPage, setComponentsPerPage] = useState(8);
-    const [currentPage, setCurrentPage] = useState(1);
-    const indexOfLastComponent = currentPage * componentsPerPage;
-    const currentData = countdata.slice(0, indexOfLastComponent);
-    console.log(countdata)
-    const hanldeButton = () =>{
-        setTotalComponents(totalComponents + 8);
-        setCurrentPage(Math.ceil((totalComponents + 8) / componentsPerPage));
-    }
-    setTimeout(()=>{
-        setLoading(false)
-    },10000)
+    const [Annonce_valider , setAnnonce] = useState([]) 
+    useEffect(() => { 
+        setLoading(true);
+        fetch('http://172.50.1.84:3000/api/usermir/getPubAnnonces?iduser=0&nbaffiche=100&numlinebeforefirst=0')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                if (data.status === 200) {
+                    setAnnonce(data.data);
+                    console.log(data.data)
+                    setLoading(false)
+                } else {
+                    alert(data.message + "  status : " + data.status)
+                }
+            })
+            .catch(error => {
+                console.log("errorr : " + error)
+            });
+    }, [])
+   const handleFormSubmit = (formData) => {
+    console.log('Données du formulaire dans ParentComponent :', formData);
+        setLoading(true)
+        axios.post('http://172.50.1.84:3000/api/usermir/searchOnPubAnnonce', formData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            console.log(response.data);
+            if(response.data.status === 200){
+                    setAnnonce(response.data.data)
+                    setLoading(false)
+            }else{
+                if(response.data.status === 201){
+                    setAnnonce([])
+                    setLoading(false)
+                }
+            }
+        })
+        .catch((error) => {
+            console.error('Erreur lors de la requête:', error);
+        });
+    };
     return(
         <div className="content-data">
             <Header />
             <div className="formulaire">
-                    <FormRecherche />
+                    <FormRecherche onSubmit={handleFormSubmit} />
                 <div className="content-annonce">
                     <div className="Annonce">
                         {
                             Isloading ? <CardSekeleton /> : 
                             <>
                                 {
-                                    countdata.length === 0 ? <div className="nodata">
+                                    Annonce_valider.length === 0 ? <div className="nodata">
                                         <img src={nodata} alt="..." />
                                     </div> : 
-                                    currentData.map((item, index) => (
-                                        <Card key={index} object_annonce={Occasion} />
+                                    Annonce_valider.map((item, index) => (
+                                        <Card key={index} object_annonce={item} />
                                     ))
                                 }
                             </>
                         }
                     </div>
-                    {
-                        countdata.length === 0 ? '' : <>
-                            {
-                                Isloading ? '' :
-                                <>
-                                    <div className='pagination'>
-                                        <div className='previsous' onClick={hanldeButton}>  <span>Previous</span>  <i className='fas fa-arrow-left'></i></div>
-                                        <div className='add' onClick={hanldeButton}> <i className='fas fa-arrow-right'></i>  <span>Next </span> </div>
-                                    </div>
-                                </>
-                            }
-                        </>
-                    }
-                        
                 </div>
             </div>
             <Footer />

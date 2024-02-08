@@ -52,50 +52,31 @@
         justify-content: center;
         align-items: center;
     }
-    .en_vente{
+    .content-data-me{
         display: flex;
-        justify-content: space-between;
-        width: 30%;
-        padding: 8px;
+        flex-direction: column;        
+        gap: 0px 10px;
         div{
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            width: 98%;
+            margin: 0 auto;
+            margin-top: 5px;
+            padding: 15px;
+            border-bottom: 2px dotted rgba(44, 43, 43, 0.666) ;;
             span{
-                margin-left: 15px;
-                font-size: 14px;
-                font-family: poppins_ligth;
+                color: black;
+                font-weight: bold;
             }
-        }
-    }
-    .favoris{
-        display: flex;
-        justify-content: space-between ;
-        width: 30%;
-        padding: 8px;
-        margin-top: 2px;
-        div{
-            display: flex;
-            align-items: center;
-            span{
-                font-size: 13px;
-                margin-left: 15px;
-                font-family: poppins_ligth;
-            }
-        }
-    }
-    .nombre_voiture{
-        display: flex;
-        justify-content: space-between ;
-        width: 30%;
-        padding: 8px;
-        margin-top: 2px;
-        div{
-            display: flex;
-            align-items: center;
-            span{
-                font-size: 14px;
-                font-family: poppins_ligth;
-                margin-left: 15px;
+            .voiture_andy{
+                color: var(--var_marine);
+                width: 200px;
+                padding: 18px;
+                font-weight: bold;
+                border-radius: 5px;
+                font-weight: bold;
+                font-size: 19px;
             }
         }
     }
@@ -115,10 +96,9 @@
             width: 100%;
             gap: 10px;
             .image-gallery{
-                width: 720px;
-                border-radius: 20px;
+                width: 700px;
                 img{
-                    border-radius: 20px;
+                    border-radius: 5px;
                 }
                 .image-gallery-right-nav {
                     .image-gallery-svg{
@@ -135,23 +115,64 @@
             }
             .caracteristique{
                 width: 50%;
-                h1{
-                    font-size: 13px;
-                    font-weight: bold;
-                    margin-top: 5px;
+                display: flex;
+                flex-direction: column;
+                .name_voiture{
+                    font-size: 80px;
+                    font-weight: bold   ;
+                    color: black !important;
                 }
-                table{
-                    width: 100%;
-                    tr{
-                        border: none;
-                        border-bottom: 0.1px solid rgb(160 161 208 / 4%);
-                        font-size: 15px;
+                .by{
+                    margin-top: 10px;
+                    span{
+                        font-size: 13px;
                     }
-                    td{
-                        padding: 8px;
-                    }
-                    .of,.simple-label{
+                    .modele{
+                        font-size: 14px;
                         font-weight: bold;
+                        font-size: 35px;
+                    }
+                    .aps{
+                        margin-left: 20px;
+                    }
+                    .marque{
+                        margin-left: 20px;
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                }
+                .prix{
+                    display: flex;
+                    gap: 10px;
+                    border-bottom: 2px dotted black;
+                    color: rgb(0, 0, 0);
+                    font-weight: lighter;
+                    width: 300px;
+                    padding: 20px;
+                    text-align: center; 
+                    margin-top: 30px;
+                    .pir{
+                        font-weight: bold;
+                        font-size: 25px;
+                    }
+                }
+                .caracte{
+                    margin-top: 20px;
+                    display: flex;
+                    gap: 20px;
+                    .about{
+                        div{
+                            margin-top: 20px ;
+                            span{
+                                margin-left: 5px;
+                                font-size: 20px;
+                            }
+                            .label{
+                                font-weight: bold;
+                                color: black;
+                                font-size: 14px;
+                            }
+                        }
                     }
                 }
             }
