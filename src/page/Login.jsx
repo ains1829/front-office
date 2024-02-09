@@ -7,8 +7,8 @@ import axios from 'axios';
 import { Https } from '../http/Http';
 function Login() {
     const navigate = useNavigate()
-    const [email , setEmail] = useState('') 
-    const [password, setPassword] = useState('')
+    const [email , setEmail] = useState('tafita@gmail.com') 
+    const [password, setPassword] = useState('1234')
     const handle_email = (event) =>{
         setEmail(event.target.value)
     }
