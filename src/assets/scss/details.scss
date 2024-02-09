@@ -90,6 +90,18 @@
                 color: var(--var_marine);
             }
         }
+        .status{
+            font-family: poppins_medium;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            .dispo{
+                color: #8dff8d;
+            }
+            .non-dispo{
+                color: #ff8d8d;
+            }
+        }
         .annonce{
             margin-top: 10px;
             color: rgba(90, 87, 87, 0.406);

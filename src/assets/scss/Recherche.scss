@@ -137,8 +137,7 @@
                         border-radius: 10px;
                         width: 100%;
                         height: 240px;
-                        background-repeat: no-repeat;
-                        background-size: contain;
+                        object-fit: cover;
                     }
                 }
                 .some-details{

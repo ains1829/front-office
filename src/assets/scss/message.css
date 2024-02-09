@@ -65,6 +65,14 @@
 .content-message .message .data {
   border-radius: 5px;
 }
+.content-message .message .data .message-not-found {
+  font-size: 15px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  align-items: center;
+}
 .content-message .message .data .content-persone {
   display: flex;
   align-items: center;

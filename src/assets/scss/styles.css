@@ -107,8 +107,9 @@ body {
 }
 .content-data .affiche .pub span {
   color: var(--var_marine);
-  font-size: 110px;
+  font-size: 90px;
   margin-left: 25px;
+  font-weight: bold;
   letter-spacing: 5px;
   text-shadow: rgba(0, 0, 0, 0.3);
 }

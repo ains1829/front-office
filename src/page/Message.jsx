@@ -8,14 +8,18 @@ import { useState, useEffect } from "react";
 import nodata from '../assets/image/9169253.jpg'
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { Https } from "../http/Http"
 function Message() {
     const [Personne_talk, setPersonn_talk] = useState([]);
     const navigate = useNavigate()
-    const tokens = `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmR5QGdtYWlsLmNvbSIsImlhdCI6MTcwNzE2NTkwMSwiZXhwIjoxNzA3MTY5NTAxfQ.j5iBBmAVn5tMYz8Iu2PRcrz3G4GmWN5PaoTvx-Sbd3A`
+    const tokens = localStorage.getItem('token')
+    if(tokens === null){
+        navigate('/login')
+    }
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.43.79:3000/message/allUserDiscuss', {
+        const response = await fetch(`${Https().liens}/message/allUserDiscuss`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -27,6 +31,7 @@ function Message() {
             const data = await response.json();
             if (data.status === 200) {
               setPersonn_talk(data.data);
+              console.log(data.data)
             } else {
                 console.log(data.message)
             }
@@ -44,7 +49,7 @@ function Message() {
     useEffect(() => {
         const fetchAPI = async () => {
         try {
-            const response = await fetch(`http://192.168.43.79:3000/message/findUserConnected`, {
+            const response = await fetch(`${Https().liens}/message/findUserConnected`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${tokens} `,
@@ -89,7 +94,7 @@ function Message() {
         input_message.value = "";
         console.log(form_data)
         axios
-            .post(`http://192.168.43.79:3000/message/envoyerMessage?idReceive=${choix}&contenu=${form_data}`, null ,{
+            .post(`${Https().liens}/message/envoyerMessage?idReceive=${choix}&contenu=${form_data}`, null ,{
                 headers : {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${tokens}`
@@ -101,6 +106,9 @@ function Message() {
                     localStorage.removeItem('token');
                     navigate('/login')
                 }
+            })
+            .catch((error)=>{
+                console.error('Error ' , error)
             })
             
     }

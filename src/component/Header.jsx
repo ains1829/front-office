@@ -14,7 +14,7 @@ function Header(){
         window.removeEventListener('scroll', handleScroll);
         };
   }, []);  
-    // const localstorag = localStorage.getItem('token')                       
+    const localstorag = localStorage.getItem('token')                       
     return(
         <header className={isScrolled ? 'scrolled' : ''}>
             <div className="logo">
@@ -27,16 +27,14 @@ function Header(){
                     </Link>
                 </span>
                 <span>
-                    {/* {
-                        localstorag === null ? <Link to="/login">Message</Link> : 
-                    } */}
-                    <Link to="/message">Message</Link>
+                    {
+                        localstorag === null ? <Link to="/login">Message</Link> : <Link to="/message">Message</Link>
+                    }
                 </span>
                 <span>
-                    {/* {
+                    {
                         localstorag === null ? <Link to="/login">Favoris</Link> : <Link to="/favorie">Favoris</Link>
-                    } */}
-                    <Link to="/favorie">Favoris</Link>
+                    }
                 </span>
                 <span>
                     <Link to="/recherche">
@@ -44,7 +42,9 @@ function Header(){
                     </Link>
                 </span>
                 <span> 
-                    <Link to="/mesannonce">Moi</Link>
+                    {
+                        localstorag === null ? <Link to="/login">Moi</Link> : <Link to="/mesannonce">Moi</Link>
+                    }
                 </span>
             </div>
             <Link to="/login" className="connect">

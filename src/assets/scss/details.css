@@ -90,6 +90,18 @@
   font-weight: bold;
   color: var(--var_marine);
 }
+.Details .modele .status {
+  font-family: poppins_medium;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+.Details .modele .status .dispo {
+  color: #8dff8d;
+}
+.Details .modele .status .non-dispo {
+  color: #ff8d8d;
+}
 .Details .modele .annonce {
   margin-top: 10px;
   color: rgba(90, 87, 87, 0.406);

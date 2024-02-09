@@ -1,5 +1,6 @@
 import { useState , useEffect } from 'react';
 import '../assets/fontawesome-5/css/all.min.css'
+import { Https } from '../http/Http';
 function FormRecherche({onSubmit}){
     const [word , setWord] = useState('')
     const [categorie , setCategorie] = useState([])
@@ -21,7 +22,7 @@ function FormRecherche({onSubmit}){
     }
     const handleMarque = (e) => {
         setMarque(e.target.value)
-        fetch('http://172.50.1.84:3000/api/usermir/getModelsParMarque?idmarque='+e.target.value)
+        fetch(`${Https().liens}/api/usermir/getModelsParMarque?idmarque=`+e.target.value)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -69,7 +70,7 @@ function FormRecherche({onSubmit}){
     };
     const [all_categorie , setAllcategorie]  = useState([])
     useEffect(() => { 
-        fetch('http://172.50.1.84:3000/categorie/allCategorie')
+        fetch(`${Https().liens}/categorie/allCategorie`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -77,7 +78,7 @@ function FormRecherche({onSubmit}){
                     setAllcategorie(data.data);
                     console.log(data.data)
                 } else {
-                    alert(data.message + "  status : " + data.status)
+                    // alert(data.message + "  status : " + data.status)
                 }
             })
             .catch(error => {
@@ -86,7 +87,7 @@ function FormRecherche({onSubmit}){
     }, [])
     const [all_marque , setAllmarque]  = useState([])
     useEffect(() => { 
-        fetch('http://172.50.1.84:3000/marque/allMarque')
+        fetch(`${Https().liens}/marque/allMarque`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -94,7 +95,7 @@ function FormRecherche({onSubmit}){
                     setAllmarque(data.data);
                     console.log(data.data)
                 } else {
-                    alert(data.message + "  status : " + data.status)
+                    // alert(data.message + "  status : " + data.status)
                 }
             })
             .catch(error => {
@@ -103,14 +104,14 @@ function FormRecherche({onSubmit}){
     }, [])
     const [all_modele , setallModele] = useState([])
     useEffect(() => { 
-         fetch('http://172.50.1.84:3000/api/usermir/getModelsParMarque?idmarque=0')
+         fetch(`${Https().liens}/api/usermir/getModelsParMarque?idmarque=0`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 if (data.status === 200) {
                     setallModele(data.data.models);
                 } else {
-                    alert(data.message + "  status : " + data.status)
+                    // alert(data.message + "  status : " + data.status)
                 }
             })
             .catch(error => {

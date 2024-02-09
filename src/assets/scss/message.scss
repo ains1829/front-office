@@ -63,6 +63,14 @@
         border-radius: 20px 20px 0px 0px;
         .data{
             border-radius: 5px;
+            .message-not-found{
+                font-size: 15px;
+                color: gray;
+                display: flex;
+                justify-content: center;
+                font-weight: bold;
+                align-items: center;
+            }
            .content-persone{
                 display: flex; 
                 align-items: center;

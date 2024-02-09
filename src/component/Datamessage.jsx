@@ -1,14 +1,20 @@
 import { useEffect, useState , useRef , useLayoutEffect } from 'react';
 import user from '../assets/image/profile-2.svg';
+import { useNavigate } from 'react-router-dom';
+import { Https } from '../http/Http';
 
 function Datamessage({ idpersonne , email }) {
   console.log(idpersonne)
-  const tokens = `eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmR5QGdtYWlsLmNvbSIsImlhdCI6MTcwNzE2NTkwMSwiZXhwIjoxNzA3MTY5NTAxfQ.j5iBBmAVn5tMYz8Iu2PRcrz3G4GmWN5PaoTvx-Sbd3A`
+  const tokens = localStorage.getItem('token')
+  const navigate = useNavigate()
+  if(tokens === null) {
+    navigate('/login')
+  }
   const [Message, setMessage] = useState([]);
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await fetch(`http://192.168.43.79:3000/message/allMessage?idReceive=${idpersonne}`, {
+        const response = await fetch(`${Https().liens}/message/allMessage?idReceive=${idpersonne}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokens} `,
@@ -19,7 +25,7 @@ function Datamessage({ idpersonne , email }) {
           const result = await response.json();
           setMessage(result.data);
         }else{
-          alert('TOLOGIN')
+            navigate('/login')
         }
       } catch (error) {
         console.log(error)
@@ -27,12 +33,12 @@ function Datamessage({ idpersonne , email }) {
 
     };
     fetchAPI();
-  },[idpersonne , tokens]);
+  },[idpersonne , tokens , navigate]);
   const [me , setMe] = useState(null)
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await fetch(`http://192.168.43.79:3000/message/findUserConnected`, {
+        const response = await fetch(`${Https().liens}/message/findUserConnected`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokens} `,
@@ -43,7 +49,7 @@ function Datamessage({ idpersonne , email }) {
           const result = await response.json();
           setMe(result.data);
         }else{
-          alert('TOLOGIN')
+          navigate('/login')
         }
       } catch (error) {
         console.log(error)
@@ -51,7 +57,7 @@ function Datamessage({ idpersonne , email }) {
 
     };
     fetchAPI();
-  },[tokens]);
+  },[tokens , navigate]);
   const scrollContainerRef = useRef(null);
   useLayoutEffect(() => {
     const scrollContainer = scrollContainerRef.current;

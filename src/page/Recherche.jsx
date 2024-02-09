@@ -8,31 +8,65 @@ import Card from "../component/Card"
 import nodata from '../assets/image/9169253.jpg'
 import CardSekeleton from "../component/CardSekeleton"
 import axios from "axios"
+import { Https } from "../http/Http"
 function Recherche(){
     const [Isloading , setLoading] = useState(true)
-    const [Annonce_valider , setAnnonce] = useState([]) 
-    useEffect(() => { 
-        setLoading(true);
-        fetch('http://172.50.1.84:3000/api/usermir/getPubAnnonces?iduser=0&nbaffiche=100&numlinebeforefirst=0')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                if (data.status === 200) {
-                    setAnnonce(data.data);
-                    console.log(data.data)
-                    setLoading(false)
+    const [Annonce , setAnnonce] = useState([]) 
+    const [me, setMe] = useState(null)
+    const [iduser , setIdUser] = useState(0)
+    const token = localStorage.getItem('token')
+    useEffect(() => {
+        const fetchAPI = async () => {
+            try {
+                const response = await fetch(`${Https().liens}/message/findUserConnected`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token} `,
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    const result = await response.json();
+                    setMe(result.data);
                 } else {
-                    alert(data.message + "  status : " + data.status)
+                    localStorage.removeItem('token');
                 }
-            })
-            .catch(error => {
-                console.log("errorr : " + error)
-            });
-    }, [])
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        fetchAPI();
+    }, [token]);
+
+    useEffect(() => {
+        if (me !== null) {
+            console.log(me.id)
+            setIdUser(me.id);
+        }
+    }, [me]);
+    useEffect(() => {
+        if (me !== null) {
+            console.log(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
+            fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 200) {
+                        setAnnonce(data.data);
+                        console.log(data.data);
+                        setLoading(false);
+                    } else {
+                        // alert(data.message + "  status : " + data.status)
+                    }
+                })
+                .catch(error => {
+                    console.log("errorr : " + error)
+                });
+        }
+    }, [me, iduser]);
    const handleFormSubmit = (formData) => {
     console.log('Données du formulaire dans ParentComponent :', formData);
         setLoading(true)
-        axios.post('http://172.50.1.84:3000/api/usermir/searchOnPubAnnonce', formData, {
+        axios.post(`${Https().liens}/api/usermir/searchOnPubAnnonce`, formData, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -64,10 +98,10 @@ function Recherche(){
                             Isloading ? <CardSekeleton /> : 
                             <>
                                 {
-                                    Annonce_valider.length === 0 ? <div className="nodata">
+                                    Annonce.length === 0 ? <div className="nodata">
                                         <img src={nodata} alt="..." />
                                     </div> : 
-                                    Annonce_valider.map((item, index) => (
+                                    Annonce.map((item, index) => (
                                         <Card key={index} object_annonce={item} />
                                     ))
                                 }

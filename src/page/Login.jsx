@@ -4,6 +4,7 @@ import logo from '../assets/image/1-removebg-preview.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { Https } from '../http/Http';
 function Login() {
     const navigate = useNavigate()
     const [email , setEmail] = useState('') 
@@ -21,7 +22,7 @@ function Login() {
     const submit = (event) => {
         event.preventDefault()
         axios
-            .post('http://172.50.1.84:3000/signinlogin/authentication', formdata ,{
+            .post(`${Https().liens}/signinlogin/authentication`, formdata ,{
                 headers : {
                     'Content-Type': 'application/json',
                 }
@@ -29,13 +30,17 @@ function Login() {
             .then((response) => {
                 if(response.status === 200){
                     if(response.data.status === 200){
+                        localStorage.removeItem('token')
                         localStorage.setItem('token' , response.data.data.token) ;
-                        alert('aha')
+                        // alert('aha')
                         navigate("/acceuil")
                     }else{
                         alert('SOMETHIG WRONG')
                     }
                 }
+            })
+            .catch((error)=>{
+                console.error('error : ' , error)
             })
     }
     return (

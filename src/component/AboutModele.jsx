@@ -1,18 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import ChoixMessage from "./ChoixMessage"
-import { useState , useEffect} from "react"
+import { useState , useEffect } from "react"
+import { Https } from "../http/Http"
 function AboutModele({ idannonce }) {
     console.log(idannonce)
+    const token = localStorage.getItem('token')
     const [Details , setDetails] = useState(null)
+    const navigate = useNavigate()
      useEffect(() => { 
-        fetch('http://192.168.43.165:3000/api/usermir/getDetailAnnonce?iduser=0&idannonce='+idannonce)
+        fetch(`${Https().liens}/api/usermir/getDetailAnnonce?iduser=0&idannonce=`+idannonce)
             .then(response => response.json())
             .then(data => {
                 console.log(data.data)
                 if (data.status === 200) {
                     setDetails(data.data);
                 } else {
-                    alert(data.message + "  status : " + data.status)
+                    // alert(data.message + "  status : " + data.status)
                 }
             })
             .catch(error => {
@@ -21,7 +24,12 @@ function AboutModele({ idannonce }) {
     }, [idannonce])
     const [choix, setchoix] = useState(false)
     function ChangeChoix() {
-        setchoix(true)
+        if(token === null){
+            navigate('./login')
+            alert('CONNECTER VOUS POUR POUVOIR LE CONTACTER')
+        }else{
+            setchoix(true)
+        }
     }
     return (
         <div className="content-modele-message">
@@ -30,6 +38,13 @@ function AboutModele({ idannonce }) {
                 <div className="prix">
                     <span className="p">Prix : </span>
                     <span className="price">{Details?.prixvente} ar</span>
+                </div>
+                <div className="status"> {
+                    Details?.statusvente === true ?    
+                    <span className="non-dispo">Non Disponible</span>
+                        :
+                    <span className="dispo">Disponible</span>
+                }
                 </div>
                 <div className="annonce">Publier il y a : {Details?.dateformaterannonce}</div>
                 <Link onClick={ChangeChoix}>
@@ -42,7 +57,7 @@ function AboutModele({ idannonce }) {
                 </Link>
             </div>
             {
-                choix === true ? <ChoixMessage idannonce={idannonce} /> : ""
+                choix === true ? <ChoixMessage iduser={Details?.iduser} /> : ""
             }
         </div>
     )

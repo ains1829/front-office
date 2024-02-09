@@ -1,20 +1,16 @@
 import React from 'react';
 import Gallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import image_test from '../assets/image/occasion.jpg'
-import image_other from '../assets/image/6034768.jpg'
-const images = [
-  {
-    original: image_other ,
-    thumbnail: image_other,
-  },
-  {
-    original: image_test ,
-    thumbnail: image_test,
-  },
-];
+const images = []
 
-const ImageCarousel = () => {
+const ImageCarousel = ({images_annonce}) => {
+  for(let i = 0; i < images_annonce.length; i++) {
+    const img = {
+      original: images_annonce[i] ,
+      thumbnail : images_annonce[i]
+    }
+    images.concat(img)
+  }
   return (
     <Gallery
       items={images}

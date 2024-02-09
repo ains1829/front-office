@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
 import Mycarousel from "./Carousel"
 import { useState , useEffect} from "react"
+import { Https } from "../http/Http"
 function DetailsAnnonce({ idannonce }) {
     console.log(idannonce)
     const [Details , setDetails] = useState(null)
      useEffect(() => { 
-        fetch('http://192.168.43.165:3000/api/usermir/getDetailAnnonce?iduser=0&idannonce='+idannonce)
+        fetch(`${Https().liens}/api/usermir/getDetailAnnonce?iduser=0&idannonce=`+idannonce)
             .then(response => response.json())
             .then(data => {
                 console.log(data.data)
@@ -19,6 +20,17 @@ function DetailsAnnonce({ idannonce }) {
                 console.log("errorr : " + error)
             });
     }, [idannonce])
+    function tab_categorie(data){
+        var categorei = "" 
+        for (let index = 0; index < data.length; index++) {
+            if(index !== data.length - 1){
+                categorei=+" " + data[index] ;
+            }else{
+                categorei=+" " + data[index] + " ," ;
+            }
+        }
+        return categorei ;
+    }
     return (
         <div className="details">
             <div className="photo-car">
@@ -51,7 +63,10 @@ function DetailsAnnonce({ idannonce }) {
                     <span className="label">Kilomatrage :</span> <span className="simple-label"> {Details?.kilometrage} km</span>
                 </div>
                 <div>
-                    <span className="label">Categorie : </span> <span className="simple-label">Famille , Sportif</span>
+                    <span className="label">Categorie : </span> <span className="simple-label">{
+                        Details?.categories && 
+                        tab_categorie(Details?.categories)
+                    }</span>
                 </div>
                 <div>
                     <span className="label">Transmission : </span><span className="simple-label">{Details?.nomtransmission}</span>

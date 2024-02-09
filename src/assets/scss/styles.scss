@@ -40,7 +40,6 @@ body{
         transition: .5s;
         display: flex;
         align-items: center;
-        // position: fixed;
         justify-content: space-between;
         background: #1a1b4100;
         width: 100%;
@@ -99,8 +98,9 @@ body{
             width: 100%;
             span{
                 color: var(--var_marine);
-                font-size: 110px;
+                font-size: 90px;
                 margin-left: 25px;
+                font-weight: bold;
                 letter-spacing: 5px;
                 text-shadow: rgba(0,0,0,0.3);
             }

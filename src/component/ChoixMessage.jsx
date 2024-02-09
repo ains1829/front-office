@@ -1,7 +1,30 @@
-function ChoixMessage({idannonce}){
-    console.log(idannonce)
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Https } from "../http/Http";
+function ChoixMessage({iduser}){
+    console.log(iduser)
+    const tokens = localStorage.getItem('token')
+    const navigate = useNavigate()
     function check_choix(value){
-       alert(value)
+        console.log(`${Https().liens}/message/envoyerMessage?idReceive=${iduser}&contenu=${value}`)
+       axios
+            .post(`${Https().liens}/message/envoyerMessage?idReceive=${iduser}&contenu=${value}`, null ,{
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${tokens}`
+                }
+            })
+            .then((response) => {
+                if(response.status === 200){
+                    alert('Message sent successfully')
+                }else{
+                    localStorage.removeItem('token');
+                    navigate('/login')
+                }
+            })
+            .catch((error)=>{
+                console.error('Error ' , error)
+            })
     }
     return(
         <div className="choix-message">
