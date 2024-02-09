@@ -6,6 +6,7 @@ import Message from './page/Message';
 import Login from './page/Login';
 import Favoris from './page/Favoris';
 import Mesannonce from './page/Mesannonce';
+import MonSolde from './page/MonSolde';
 function App() { 
   const location = useLocation()
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/message' Component={Message}></Route>
       <Route path='/login' Component={Login}></Route>
       <Route path='/favorie' Component={Favoris}></Route>
+      <Route path='/mysolde' Component={MonSolde}></Route>
       <Route path='/mesannonce' Component={Mesannonce}></Route>
     </Routes>
   );

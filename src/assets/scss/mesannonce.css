@@ -1,3 +1,17 @@
+.mysolde {
+  background: rgba(228, 226, 226, 0.118);
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.mysolde a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: poppins_medium;
+}
+
 .mes_annonce {
   width: 100%;
   margin: 0 auto;

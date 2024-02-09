@@ -6,7 +6,7 @@ import '../assets/fontawesome-5/css/all.min.css'
 import ImageSekeleton from "../component/ImageSekeleton"
 import { useState , useEffect} from "react"
 import SpanSkeleton from "../component/SpanSkeleton"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Https } from "../http/Http"
 function Mesannonce(){
     const [Loading , setLoading] = useState(true) 
@@ -34,7 +34,6 @@ function Mesannonce(){
                     setActivity(data.data);
                     setLoading_perso(false)
                 } else {
-                    // alert(data.message + "  status : " + data.status)
                 }
             })
             .catch(error => {
@@ -70,6 +69,11 @@ function Mesannonce(){
     return(
         <div className="content-data">
             <Header />
+            <div className="mysolde">
+                <Link to="/mysolde">
+                    Voir mon Solde
+                </Link>
+            </div>
             <div className="mes_annonce">
                 {
                     loading_person ? <SpanSkeleton /> : 
@@ -84,7 +88,7 @@ function Mesannonce(){
                             <span>{Activity.nbfavoris}</span>
                         </div>
                         <div className="nombre_voiture">
-                            <span className="voiture_andy">Mes Annonces</span>
+                            <span className="voiture_andy">Mes Annonces Valider</span>
                             <span>{Activity.nbannonce}</span>
                         </div>
                     </div>

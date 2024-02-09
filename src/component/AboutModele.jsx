@@ -7,7 +7,7 @@ function AboutModele({ idannonce }) {
     const token = localStorage.getItem('token')
     const [Details , setDetails] = useState(null)
     const navigate = useNavigate()
-     useEffect(() => { 
+    useEffect(() => { 
         fetch(`${Https().liens}/api/usermir/getDetailAnnonce?iduser=0&idannonce=`+idannonce)
             .then(response => response.json())
             .then(data => {

@@ -5,9 +5,9 @@ function Detailsmy({ object }) {
         var categorei = "" 
         for (let index = 0; index < data.length; index++) {
             if(index !== data.length - 1){
-                categorei=+" " + data[index] ;
+                categorei+=" " + data[index].nomcategorie + " ," ;
             }else{
-                categorei=+" " + data[index] + " ," ;
+                categorei+=" " + data[index].nomcategorie ;
             }
         }
         return categorei ;
@@ -24,6 +24,10 @@ function Detailsmy({ object }) {
                         </div>
                         <div className="caracte">
                             <div className="about">
+                                <div>
+                                    <span className="label">Publier il y a : </span>
+                                    <span> {object?.dateformaterannonce} </span>
+                                </div>
                                 <div>
                                     <span className="label">Annee : </span>
                                     <span>{object?.anneefab}</span>
@@ -43,6 +47,10 @@ function Detailsmy({ object }) {
                             </div>
                             <div className="about">
                                 <div>
+                                    <span className="label">lieu : </span>
+                                    <span>{object?.nomlieu}</span>
+                                </div>
+                                <div>
                                     <span className="label">Vitesse : </span>
                                     <span>{object?.vitesse} km/h</span>
                                 </div>
@@ -54,7 +62,7 @@ function Detailsmy({ object }) {
                                     <span className="label">Categorie : </span>
                                     <span>{
                                         object?.categories && 
-                                        tab_categorie(object?.categories)
+                                        tab_categorie(object.categories)
                                     }</span>
                                 </div>
                             </div>

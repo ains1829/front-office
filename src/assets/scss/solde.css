@@ -1,0 +1,89 @@
+.monSolde {
+  display: flex;
+  justify-content: space-between;
+  font-family: poppins_ligth;
+  gap: 10px;
+}
+.monSolde .solde {
+  background-image: linear-gradient(700deg, rgb(5, 23, 178), rgb(191, 13, 191));
+  width: 300px;
+  height: 160px;
+  padding: 5px;
+  color: white;
+  margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 3px rgba(102, 6, 204, 0.3);
+}
+.monSolde .solde .sol {
+  font-size: 13px;
+  font-weight: bold;
+}
+.monSolde .solde .price {
+  font-size: 40px;
+}
+.monSolde .form-credit-solde {
+  margin-top: 10px;
+}
+.monSolde .form-credit-solde div input[type=text] {
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--var_marine);
+}
+.monSolde .form-credit-solde div input[type=submit] {
+  font-size: 13px;
+  border: none;
+  font-weight: bold;
+  background: var(--var_marine);
+  color: white;
+  padding: 5px;
+  margin-left: 5px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.table table {
+  width: 100%;
+  border: none !important;
+  text-align: left;
+}
+.table table tr {
+  border: none !important;
+  border-radius: 25px;
+}
+.table table .tr {
+  background: var(--var_marine);
+}
+.table table .tr th {
+  padding: 10px;
+  color: white;
+}
+.table table td {
+  border: none !important;
+  padding: 15px;
+  border-bottom: 1px solid var(--var_marine);
+  color: rgb(33, 32, 32);
+}
+.table table .Etat1 {
+  font-size: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.table table .Etat1:hover {
+  background: rgb(189, 2, 43);
+}
+.table table .Etat1:hover td {
+  color: white !important;
+}
+.table table .Etat0 {
+  font-size: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.table table .Etat0:hover {
+  background: rgba(23, 66, 240, 0.453);
+}
+.table table .Etat0:hover td {
+  color: white !important;
+}/*# sourceMappingURL=solde.css.map */
