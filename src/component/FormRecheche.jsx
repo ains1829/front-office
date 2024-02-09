@@ -10,6 +10,31 @@ function FormRecherche({onSubmit}){
     const [prixMin , setPrixMin] = useState(0)
     const [prixMax , setPrixMax] = useState(0)
     const [place , setPlace] = useState(0)
+    const token = localStorage.getItem('token')
+    const [iduser , setIdUser] = useState(0)
+    useEffect(() => {
+        const fetchAPI = async () => {
+            try {
+                const response = await fetch(`${Https().liens}/message/findUserConnected`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token} `,
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    const result = await response.json();
+                    setIdUser(result.data.id)
+                    console.log("iduser = " + result.data.id)
+                } else {
+                    localStorage.removeItem('token');
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        fetchAPI();
+    }, [token]);
     const handleWord = (e) =>{
         setWord(e.target.value);
     }
@@ -54,7 +79,7 @@ function FormRecherche({onSubmit}){
         setPlace(e.target.value)
     }
     const formData = {
-        "iduser" : 0 ,
+        "iduser" : iduser ,
         "word" : word ,
         "idmarque" : marque,
         "idmodel" : modele ,

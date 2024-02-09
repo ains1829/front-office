@@ -11,10 +11,10 @@ import axios from "axios"
 import { Https } from "../http/Http"
 function Recherche(){
     const [Isloading , setLoading] = useState(true)
-    const [Annonce , setAnnonce] = useState([]) 
+    const [Annonce_valider , setAnnonce] = useState([]) 
+    const token = localStorage.getItem('token')
     const [me, setMe] = useState(null)
     const [iduser , setIdUser] = useState(0)
-    const token = localStorage.getItem('token')
     useEffect(() => {
         const fetchAPI = async () => {
             try {
@@ -28,6 +28,8 @@ function Recherche(){
                 if (response.status === 200) {
                     const result = await response.json();
                     setMe(result.data);
+                    setIdUser(result.data.id)
+                    console.log("iduser = " + result.data.id)
                 } else {
                     localStorage.removeItem('token');
                 }
@@ -37,23 +39,17 @@ function Recherche(){
         };
         fetchAPI();
     }, [token]);
-
-    useEffect(() => {
-        if (me !== null) {
-            console.log(me.id)
-            setIdUser(me.id);
-        }
-    }, [me]);
-    useEffect(() => {
-        if (me !== null) {
-            console.log(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
-            fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
+    useEffect(() => { 
+        if(iduser === 0){
+            setLoading(true);
+            fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=0&nbaffiche=100&numlinebeforefirst=0`)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data)
                     if (data.status === 200) {
                         setAnnonce(data.data);
-                        console.log(data.data);
-                        setLoading(false);
+                        console.log(data.data)
+                        setLoading(false)
                     } else {
                         // alert(data.message + "  status : " + data.status)
                     }
@@ -61,8 +57,25 @@ function Recherche(){
                 .catch(error => {
                     console.log("errorr : " + error)
                 });
+            }else{
+                fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=100&numlinebeforefirst=0`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.status === 200) {
+                            setAnnonce(data.data);
+                            console.log(data.data)
+                            setLoading(false)
+                        } else {
+                            // alert(data.message + "  status : " + data.status)
+                        }
+                    })
+                    .catch(error => {
+                        console.log("errorr : " + error)
+                    });
+            
         }
-    }, [me, iduser]);
+    }, [me,iduser])
    const handleFormSubmit = (formData) => {
     console.log('Données du formulaire dans ParentComponent :', formData);
         setLoading(true)
@@ -98,10 +111,10 @@ function Recherche(){
                             Isloading ? <CardSekeleton /> : 
                             <>
                                 {
-                                    Annonce.length === 0 ? <div className="nodata">
+                                    Annonce_valider.length === 0 ? <div className="nodata">
                                         <img src={nodata} alt="..." />
                                     </div> : 
-                                    Annonce.map((item, index) => (
+                                    Annonce_valider.map((item, index) => (
                                         <Card key={index} object_annonce={item} />
                                     ))
                                 }

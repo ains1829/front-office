@@ -31,6 +31,8 @@ function Acceuils() {
                 if (response.status === 200) {
                     const result = await response.json();
                     setMe(result.data);
+                    setIdUser(result.data.id)
+                    console.log("iduser = " + result.data.id)
                 } else {
                     localStorage.removeItem('token');
                 }
@@ -40,31 +42,42 @@ function Acceuils() {
         };
         fetchAPI();
     }, [token]);
-
-    useEffect(() => {
-        if (me !== null) {
-            console.log(me.id)
-            setIdUser(me.id);
-        }
-    }, [me]);
     useEffect(()=>{
-        fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
-            .then(response => response.json())
-            .then(data => {
-                console.log("data="+JSON.stringify(data.data)) 
-                if (data.status === 200) {
-                    setNextPage(data.canNext)
-                    setPreviouspage(data.canPrev)
-                    setAnnonce(data.data);
-                    console.log(data.data)
-                    setLoading(false)
-                } else {
-                    // alert(data.message + "  status : " + data.status)
-                }
-            })
-            .catch(error => {
-                console.log("errorr : " + error)
-            });
+        if(iduser===0){
+            fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=0&nbaffiche=8&numlinebeforefirst=0`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data="+JSON.stringify(data.data)) 
+                    if (data.status === 200) {
+                        setNextPage(data.canNext)
+                        setPreviouspage(data.canPrev)
+                        setAnnonce([]);
+                        setAnnonce(data.data);
+                        console.log(data.data)
+                        setLoading(false)
+                    } else {
+                    }
+                })
+                .catch(error => {
+                    console.log("errorr : " + error)
+                });
+            }else{
+                fetch(`${Https().liens}/api/usermir/getPubAnnonces?iduser=${iduser}&nbaffiche=8&numlinebeforefirst=0`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 200) {
+                            setNextPage(data.canNext)
+                            setPreviouspage(data.canPrev)
+                            setAnnonce(data.data);
+                            console.log(data.data)
+                            setLoading(false)
+                        } else {
+                        }
+                    })
+                    .catch(error => {
+                        console.log("errorr : " + error)
+                });
+        }
     },[me,iduser])
 
     const handle_next = () => {

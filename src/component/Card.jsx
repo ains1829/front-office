@@ -2,12 +2,15 @@ import { Link } from "react-router-dom"
 import '../assets/scss/Card.css'
 import '../assets/scss/styles.css'
 import '../assets/fontawesome-5/css/all.min.css'
-import { useState } from "react"
+import {useEffect, useState } from "react"
 import axios from "axios"
 import { Https } from "../http/Http"
 function Card({ object_annonce }) {
     const token = localStorage.getItem('token')
-    const [favoris, setFavoris] = useState(object_annonce.estfavoris)
+    const [favoris, setFavoris] = useState(false)
+    useEffect(()=>{
+        setFavoris(object_annonce.estfavoris)
+    } , [object_annonce.estfavoris])
     function check_favoris() {
         const selector = `.nb_favoris${object_annonce.idannonce}` 
         const nbfavroirs = document.querySelector(selector)
@@ -53,7 +56,7 @@ function Card({ object_annonce }) {
                     <span className="name">{object_annonce.nomvoiture}</span>
                     <div className="favoris">
                         <span className={`nb_favoris${object_annonce.idannonce}`}>{object_annonce.nbfavoris}</span>
-                        <i onClick={check_favoris} className={`far fa-heart ${favoris === true ? 'fas fa-heart' : ''}`}></i>
+                        <i onClick={check_favoris} className={`far fa-heart ${favoris ? 'fas fa-heart' : ''}`}></i>
                     </div>
                 </div>
         </div>
