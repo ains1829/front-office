@@ -88,7 +88,7 @@ function Mesannonce(){
                             <span>{Activity.nbfavoris}</span>
                         </div>
                         <div className="nombre_voiture">
-                            <span className="voiture_andy">Mes Annonces Valider</span>
+                            <span className="voiture_andy">Mes Annonces </span>
                             <span>{Activity.nbannonce}</span>
                         </div>
                     </div>
